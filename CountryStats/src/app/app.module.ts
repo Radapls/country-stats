@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCommonModule } from '@angular/material/core';
@@ -11,13 +12,15 @@ import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
+import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        BodyComponent
+        BodyComponent,
+        CardComponent
     ],
     imports: [
         BrowserModule,
@@ -26,10 +29,11 @@ import { HeaderComponent } from './header/header.component';
         MatAutocompleteModule,
         ReactiveFormsModule,
         FormsModule,
-        StoreModule.forRoot({}, {}),
+        StoreModule,
         MatCommonModule,
         CommonModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        FlexLayoutModule
     ],
     providers: [],
     bootstrap: [ AppComponent ]
