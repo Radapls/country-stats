@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FlagService } from 'src/core/services/country.service';
+import { Countries } from 'src/core/services/models/country.model';
 
 @Component({
     selector: 'app-card',
@@ -24,6 +25,8 @@ export class CardComponent implements OnInit
     @Input()
     public description!: string;
 
+    @Input()
+    public countries!: Countries
 
 
 
