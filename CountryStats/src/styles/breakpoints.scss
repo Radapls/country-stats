@@ -1,0 +1,18 @@
+$Mobile: 375px;
+$Desktop: 1440px;
+
+@mixin mobile
+{
+    @media screen and (max-width: #{$Mobile})
+    {
+        @content;
+    }
+}
+
+@mixin desktop
+{
+    @media screen and (max-width: #{$Desktop})
+    {
+        @content;
+    }
+}

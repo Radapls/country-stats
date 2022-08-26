@@ -1,0 +1,33 @@
+@import url(https://fonts.google.com/specimen/Nunito+Sans);
+
+$current-font-family: 'Nunito Sans';
+
+@mixin font
+{
+    font-family: $current-font-family, sans-serif;
+}
+
+@mixin font-light
+{
+    @include font;
+    font-weight: 300;
+}
+
+@mixin font-medium
+{
+    @include font;
+    font-weight: 600;
+}
+
+@mixin font-bold
+{
+    @include font;
+    font-weight: 800;
+}
+
+@mixin font-style($size, $color, $line)
+{
+    font-size: $size;
+    color: $color;
+    line-height: $line;
+}
