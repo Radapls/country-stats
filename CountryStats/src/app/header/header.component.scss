@@ -10,3 +10,16 @@ padding: .5rem;
 background-color: $Dark-Blue;
 border-bottom: solid 1px $Dark-Gray;
 }
+
+h1
+{
+    @include font-bold;
+    @include font-style(20px, $White, 16px);
+    margin-left: 10px;
+}
+
+input
+{
+    height: 30px;
+    width: 30px;
+}
