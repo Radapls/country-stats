@@ -1,3 +1,5 @@
 <app-header></app-header>
-<app-body></app-body>
-<app-card></app-card>
+<div class="grid">
+    <app-card *ngFor="let card of cards" [name]="card.image" [title]="card.title" [description]="card.description">
+    </app-card>
+</div>
