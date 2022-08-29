@@ -3,7 +3,7 @@
 
     <app-toolbar></app-toolbar>
 
-    <div class="grid">
+    <div class="grid" fxLayout="start wrap">
         <app-card *ngFor="let card of cards" [name]="card.image" [title]="card.title" [description]="card.description">
         </app-card>
     </div>
