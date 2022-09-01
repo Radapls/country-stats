@@ -1,6 +1,6 @@
 import { Action, ActionReducerMap } from '@ngrx/store';
-import { CountryReducer } from './country/reducer.coutry';
-import { CountryStore } from './country/store.coutry';
+import { CountryReducer } from './country/reducer.country';
+import { CountryStore } from './country/store.country';
 
 export interface AppState
 {

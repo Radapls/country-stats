@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { FlagService } from 'src/core/services/country.service';
+import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
     selector: 'app-root',
@@ -11,8 +13,11 @@ export class AppComponent implements OnInit
     public countries: Array<Array<string>> = []
     public cards: Array<any> = []
     public name!: string;
+    public blue!: string
 
-    constructor(private readonly country: FlagService)
+    constructor
+        (public dialog: MatDialog,
+            private readonly country: FlagService)
     { }
 
     public ngOnInit(): void
@@ -62,12 +67,23 @@ export class AppComponent implements OnInit
         this.country.getAllCountries().subscribe((res: any) =>
         {
             this.countries = res
-            console.log(this.countries)
         });
         this.country.getCountryNames('colombia').subscribe((res: string) =>
         {
             this.name = res
-            console.log(this.name)
         })
+    }
+
+    public openDialog()
+    {
+        const dialogRef = this.dialog.open(DialogComponent, {
+            height: '800px',
+            width: '800px'
+        });
+
+        dialogRef.afterClosed().subscribe(result =>
+        {
+
+        });
     }
 }

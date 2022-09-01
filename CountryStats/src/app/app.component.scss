@@ -18,3 +18,30 @@ background-color: $Very-Dark-Blue
     display: grid;
     grid-template-columns: repeat(4,1fr);
 }
+
+.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
+    color: $White;
+    background: $Very-Dark-Blue;
+}
+
+.mat-select {
+    color: $White;
+}
+
+.mat-option {
+    -webkit-tap-highlight-color: $Very-Dark-Blue
+}
+
+.mat-button-disabled.mat-button-disabled {
+    color: $White
+}
+
+
+.mat-select-value
+{
+    color: $White;
+}
+
+.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
+    color: rgb(255, 255, 255);
+}

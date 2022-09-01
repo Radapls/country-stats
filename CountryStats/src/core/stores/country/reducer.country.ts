@@ -1,6 +1,6 @@
 import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
-import { loading } from './actions.coutry';
-import { CountryStore } from './store.coutry';
+import { loading } from './actions.country';
+import { CountryStore } from './store.country';
 
 export const initialState: Partial<CountryStore> = {
     loading: false
