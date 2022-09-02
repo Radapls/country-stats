@@ -81,9 +81,6 @@ export class AppComponent implements OnInit
             width: '800px'
         });
 
-        dialogRef.afterClosed().subscribe(result =>
-        {
-
-        });
+        dialogRef.close();
     }
 }

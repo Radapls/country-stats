@@ -3,6 +3,8 @@
 
 .card
 {
+@include font-bold;
+@include font-style(16px, $Very-Dark-Blue, 36px);
 display: grid;
 grid-template-columns: repeat(4,1);
 margin: 20px;

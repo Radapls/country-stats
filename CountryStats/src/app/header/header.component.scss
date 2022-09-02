@@ -1,14 +1,20 @@
 @import '/src/styles/colors.scss';
 @import '/src/styles/fonts.scss';
+@import '/src/styles/icons.scss';
 
 .header
 {
-width: 100%;
-height: 35%;
+@include font-bold;
+@include font-style(16px, $White, 36px);
 height: 40px;
 padding: .5rem;
 background-color: $Dark-Blue;
 border-bottom: solid 1px $Dark-Gray;
+}
+
+.dark-mode
+{
+    align-items: center;
 }
 
 h1
@@ -22,4 +28,16 @@ input
 {
     height: 30px;
     width: 30px;
+}
+
+img
+{
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+
+    :hover
+    {
+        fill: aqua;
+    }
 }

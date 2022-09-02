@@ -7,7 +7,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCommonModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
@@ -18,7 +20,6 @@ import { CardComponent } from './card/card.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-
 
 @NgModule({
     declarations: [
@@ -43,7 +44,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         FlexLayoutModule,
         CoreModule,
         MatDialogModule,
-        MatButtonModule
+        MatButtonModule,
+        MatSelectModule,
+        MatIconModule
     ],
     providers: [],
     bootstrap: [ AppComponent ]

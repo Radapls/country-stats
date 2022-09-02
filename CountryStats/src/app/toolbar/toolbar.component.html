@@ -1,4 +1,25 @@
-<div fxLayout="row" fxLayoutAlign="space-between center">
-    <input type="search">
-    <input type="search">
+<div fxLayout="row" fxLayoutAlign="space-between">
+    <div class="search" fxLayout="column" fxLayoutAlign="space-between stretch">
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Country</mat-label>
+                <input matInput aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let country of (country$| async)" [value]="country.name">
+                        <img class="example-option-img" aria-hidden [src]="country.flags" height="25">
+                        <span>{{country.name}}</span> |
+                        <small>Population: {{country.continent}}</small>
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="select">
+        <mat-form-field>
+            <select matNativeControl>
+                <option *ngFor="let state of states">{{state}}</option>
+            </select>
+        </mat-form-field>
+    </div>
 </div>

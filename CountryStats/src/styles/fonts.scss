@@ -1,10 +1,10 @@
-@import url(https://fonts.google.com/specimen/Nunito+Sans);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat);
 
-$current-font-family: 'Nunito Sans';
+$font-family: 'Montserrat';
 
 @mixin font
 {
-    font-family: $current-font-family, sans-serif;
+    font-family: $font-family, sans-serif;
 }
 
 @mixin font-light
