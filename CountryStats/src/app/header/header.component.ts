@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
-    styleUrls: [ './header.component.scss' ]
+    styleUrls: [ './header.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent
 {

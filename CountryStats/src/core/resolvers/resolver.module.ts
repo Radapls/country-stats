@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CountryResolver } from './country.resolver';
+import { CountriesResolver } from './countries.resolver';
 
 @NgModule({
     providers: [
-        CountryResolver
+        CountriesResolver
     ]
 })
 export class ResolversModule

@@ -22,7 +22,6 @@ import { CardComponent } from './card/card.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -39,7 +38,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         FormsModule,
         CommonModule,
         FlexLayoutModule,
-
         MatAutocompleteModule,
         MatPaginatorModule,
         MatDialogModule,
@@ -49,7 +47,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         MatInputModule,
         MatSnackBarModule,
         MatCommonModule,
-
         CoreModule,
         SharedModule,
         TranslateModule.forRoot()

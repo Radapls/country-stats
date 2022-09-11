@@ -3,7 +3,7 @@ import { Resolve } from '@angular/router';
 import { CountriesApi } from '../api/countries.api';
 
 @Injectable()
-export class CountryResolver implements Resolve<void>
+export class CountriesResolver implements Resolve<void>
 {
     constructor(private api: CountriesApi)
     { }
