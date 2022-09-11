@@ -8,6 +8,7 @@ import { MatCommonModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -15,6 +16,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from 'src/core/core.module';
 import { SharedModule } from 'src/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -51,8 +53,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         MatButtonModule,
         MatSelectModule,
         MatIconModule,
+        MatInputModule,
         MatSnackBarModule,
-        SharedModule
+        SharedModule,
+        TranslateModule.forRoot()
     ],
     providers: [],
     bootstrap: [ AppComponent ]
