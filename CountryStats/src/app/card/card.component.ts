@@ -12,7 +12,7 @@ import { Countries } from 'src/core/services/models/country.model';
 export class CardComponent
 {
     @Input()
-    public name!: string;
+    public flag!: string;
 
     @Input()
     public title!: string;

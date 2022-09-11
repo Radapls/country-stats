@@ -22,3 +22,67 @@ input, select
 .search, .select
 {width: 100%;
 }
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: none;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-infix {
+    padding: 0;
+}
+
+.mat-form-field-wrapper {
+    position: absolute;
+}
+
+.mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+
+.mat-form-field-underline {
+    position: absolute;
+    width: 100%;
+border-color: none;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+}
+
+.mat-form-field-ripple {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    transform-origin: 0;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: none;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+background-color: none;
+}
+
+.mat-form-field {
+    line-height: 0;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+    background-color: none;
+}
+
+.mat-input-element {
+    caret-color: $White;
+}
+
+.mat-form-field.mat-focused {
+    color: $White;
+}
+
+.mat-toolbar .mat-form-field-underline,.mat-toolbar .mat-form-field-ripple,.mat-toolbar .mat-focused .mat-form-field-ripple {
+    background-color: none;
+}

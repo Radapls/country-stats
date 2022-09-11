@@ -2,19 +2,7 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/
 import { FormControl } from '@angular/forms';
 import { map, Observable, startWith, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
-import { Countries } from 'src/core/services/models/country.model';
-
-export interface State
-{
-    flag: string;
-    name: string;
-    population: string;
-}
-interface Food
-{
-    value: string;
-    viewValue: string;
-}
+import { Countries, Name } from 'src/core/services/models/country.model';
 
 @Component({
     selector: 'app-toolbar',
@@ -25,40 +13,13 @@ interface Food
 export class ToolbarComponent implements OnInit, OnDestroy
 {
 
-    stateCtrl = new FormControl('');
-    filteredStates: Observable<State[]>;
-
-    states: State[] = [
-        {
-            name: 'Arkansas',
-            population: '2.978M',
-            // https://commons.wikimedia.org/wiki/File:Flag_of_Arkansas.svg
-            flag: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg',
-        },
-        {
-            name: 'California',
-            population: '39.14M',
-            // https://commons.wikimedia.org/wiki/File:Flag_of_California.svg
-            flag: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg',
-        },
-        {
-            name: 'Florida',
-            population: '20.27M',
-            // https://commons.wikimedia.org/wiki/File:Flag_of_Florida.svg
-            flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Florida.svg',
-        },
-        {
-            name: 'Texas',
-            population: '27.47M',
-            // https://commons.wikimedia.org/wiki/File:Flag_of_Texas.svg
-            flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg',
-        },
-    ];
+    nameControl = new FormControl('');
+    filteredNames: Observable<Array<Countries>>;
 
     public sub: Subscription = new Subscription();
     public countriesControl = new FormControl('');
 
-    public names!: string;
+    public names!: Array<Name>;
 
     public countries$: Observable<Array<Countries>> = this.api.getCountries$
     public countries!: Array<Countries>;
@@ -67,16 +28,16 @@ export class ToolbarComponent implements OnInit, OnDestroy
         private readonly api: CountriesApi
     )
     {
-        this.filteredStates = this.stateCtrl.valueChanges.pipe(
+        this.filteredNames = this.nameControl.valueChanges.pipe(
             startWith(''),
-            map(state => (state ? this._filterStates(state) : this.states.slice())),
+            map(country => (country ? this._filterCountry(country) : this.countries.slice())),
         );
     }
 
-    public filterCountries(): Countries[]
-    {
-        return this.countries.filter(names => names.name.map(res => res.common));
-    }
+    // public filterCountries(): Name[]
+    // {
+    //     return this.countries?.map<Name>(res => res.name.filter(res => res.co));
+    // }
 
     public ngOnInit(): void
     {
@@ -86,13 +47,14 @@ export class ToolbarComponent implements OnInit, OnDestroy
 
     public ngOnDestroy(): void
     {
+        this.sub.unsubscribe()
     }
 
-    private _filterStates(value: string): State[]
+    private _filterCountry(value: string): Countries[]
     {
-        const filterValue = value.toLowerCase();
+        const filterValue = value;
 
-        return this.states.filter(state => state.name.toLowerCase().includes(filterValue));
+        return this.countries?.map<Countries>(res => res);
     }
 
 }

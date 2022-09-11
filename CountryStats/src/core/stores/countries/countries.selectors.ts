@@ -12,3 +12,8 @@ export const getCountries = createSelector(
     getCountryState,
     (store: CountriesStore) => store.countries
 );
+
+export const getFlags = createSelector(
+    getCountryState,
+    (store: CountriesStore) => store.flags
+);

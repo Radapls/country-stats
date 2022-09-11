@@ -18,6 +18,19 @@ export class CountriesEffect
         this.errorHandlingService.catchError(loadCountriesError)
     ));
 
+    // public getFlags$ = createEffect(() => this.actions$.pipe(
+    //     ofType(loadFlags),
+    //     switchMap(() =>
+    //         this.countriesService.getAllCountries()),
+    //     map((response) => loadFlagsSuccess({
+    //         flags: response.slice( dt =>
+    //             {
+    //                 dt.flags = flags
+    //             })
+    //     })),
+    //     this.errorHandlingService.catchError(loadCountriesError)
+    // ));
+
     constructor(
         private readonly actions$: Actions,
         private readonly countriesService: CountriesService,

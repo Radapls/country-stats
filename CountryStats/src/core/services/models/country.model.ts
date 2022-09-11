@@ -1,38 +1,41 @@
-export interface Countries
+export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<CoatOfArms> & Partial<Currencies>;
+
+
+export interface CountryBase
 {
-    name: Array<Name>,
-    tdl: string,
-    cca2: string,
-    cnn3: string,
-    cca3: string,
-    cioc: string,
-    independent: boolean,
-    status: string,
-    unMember: boolean,
-    currencies: Array<string>,
-    idd: Array<string>,
-    capital: Array<string>,
-    altSpellings: Array<string>,
-    region: string,
-    subregion: string,
-    translate: Array<string>,
-    latLng: Array<string>,
-    landlocked: boolean,
-    borders: Array<string>,
-    area: number,
-    demonyms: Array<string>,
-    iconFlag: string,
-    maps: Array<string>,
-    gini: Array<string>,
-    fifa: string,
-    car: Array<string>,
-    timeZone: Array<string>,
-    continent: Array<string>,
-    flags: Array<string>,
-    coatOfArms: Array<string>,
-    startOfWeek: string,
-    capitalInfo: Array<string>,
-    postalCode: Array<string>
+    name: Array<Name>;
+    tdl: Array<string>;
+    cca2: string;
+    cnn3: string;
+    cca3: string;
+    cioc: string;
+    independent: boolean;
+    status: string;
+    unMember: boolean;
+    currencies: Array<Currencies>;
+    idd: Array<string>;
+    capital: Array<string>;
+    altSpellings: Array<string>;
+    region: string;
+    subregion: string;
+    translate: Array<string>;
+    latLng: Array<string>;
+    landlocked: boolean;
+    borders: Array<string>;
+    area: number;
+    demonyms: Array<string>;
+    flag: string;
+    maps: Array<string>;
+    gini: Array<string>;
+    fifa: string;
+    car: Array<string>;
+    timeZone: Array<string>;
+    continent: Array<string>;
+    flags: Array<Flags>;
+    coatOfArms: Array<CoatOfArms>;
+    startOfWeek: string;
+    capitalInfo: Array<string>;
+    postalCode: Array<string>;
 }
 
 export interface CountriesResponse
@@ -53,18 +56,26 @@ export interface LatLng
     lng: string;
 }
 
-export interface Name
+export interface Name extends CountryBase
 {
-    common: string,
-    official: string,
-    nativeName: {
-        fin: {
-            official: string,
-            common: string
-        },
-        swe: {
-            official: string,
-            common: string
-        }
-    }
+    common: string;
+    official: string;
+    nativeName: Array<Array<string>>;
+}
+
+export interface Flags extends CountryBase
+{
+    png: string;
+    svg: string;
+}
+
+export interface CoatOfArms extends CountryBase
+{
+    png: string;
+    svg: string;
+}
+
+export interface Currencies extends CountryBase
+{
+    PEN: Array<string>;
 }
