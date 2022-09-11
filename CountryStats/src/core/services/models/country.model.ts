@@ -1,6 +1,6 @@
 export interface Countries
 {
-    name: Array<string>,
+    name: Array<Name>,
     tdl: string,
     cca2: string,
     cnn3: string,
@@ -33,4 +33,38 @@ export interface Countries
     startOfWeek: string,
     capitalInfo: Array<string>,
     postalCode: Array<string>
+}
+
+export interface CountriesResponse
+{
+    name: string;
+    currency: string;
+    region: string;
+    location: LatLng;
+    icon: string;
+    area: number;
+    flag: string;
+    escudo: string;
+}
+
+export interface LatLng
+{
+    lat: string;
+    lng: string;
+}
+
+export interface Name
+{
+    common: string,
+    official: string,
+    nativeName: {
+        fin: {
+            official: string,
+            common: string
+        },
+        swe: {
+            official: string,
+            common: string
+        }
+    }
 }

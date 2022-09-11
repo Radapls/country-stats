@@ -12,6 +12,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { CoreModule } from 'src/core/core.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         MatPaginatorModule,
         FormsModule,
         StoreModule,
+        EffectsModule,
         MatCommonModule,
         CommonModule,
         MatFormFieldModule,

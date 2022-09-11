@@ -15,9 +15,10 @@ export class AppComponent implements OnInit
     public name!: string;
     public blue!: string
 
-    constructor
-        (public dialog: MatDialog,
-            private readonly country: FlagService)
+    constructor(
+        private readonly dialog: MatDialog,
+        private readonly country: FlagService
+    )
     { }
 
     public ngOnInit(): void
@@ -74,7 +75,7 @@ export class AppComponent implements OnInit
         })
     }
 
-    public openDialog()
+    public openDialog(): void
     {
         const dialogRef = this.dialog.open(DialogComponent, {
             height: '800px',

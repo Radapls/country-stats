@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { api } from '../constants/api.constant';
+import { Countries } from './models/country.model';
 
 
 @Injectable()
@@ -10,9 +11,9 @@ export class FlagService
     constructor(private readonly http: HttpClient)
     { }
 
-    public getAllCountries(): Observable<Array<string>>
+    public getAllCountries(): Observable<Array<Countries>>
     {
-        return this.http.get<Array<string>>(api.all());
+        return this.http.get<Array<Countries>>(api.all());
     }
 
     public getCountryNames(name: string): Observable<any>
