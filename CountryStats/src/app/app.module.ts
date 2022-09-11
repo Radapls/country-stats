@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
@@ -48,7 +49,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         MatDialogModule,
         MatButtonModule,
         MatSelectModule,
-        MatIconModule
+        MatIconModule,
+        MatSnackBarModule
     ],
     providers: [],
     bootstrap: [ AppComponent ]

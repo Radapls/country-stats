@@ -6,7 +6,7 @@ import { Countries } from './models/country.model';
 
 
 @Injectable()
-export class FlagService
+export class CountryService
 {
     constructor(private readonly http: HttpClient)
     { }
@@ -16,13 +16,13 @@ export class FlagService
         return this.http.get<Array<Countries>>(api.all());
     }
 
-    public getCountryNames(name: string): Observable<any>
-    {
-        return this.http.get(api.name(name));
-    }
+    // public getCountryNames(name: string): Observable<any>
+    // {
+    //     return this.http.get(api.name(name));
+    // }
 
-    public getCountryCode(code: string): Observable<any>
-    {
-        return this.http.get(api.name(code));
-    }
+    // public getCountryCode(code: string): Observable<any>
+    // {
+    //     return this.http.get(api.name(code));
+    // }
 }

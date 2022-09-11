@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { FlagService } from 'src/core/services/country.service';
+import { CountryService } from 'src/core/services/country.service';
 import { Countries } from 'src/core/services/models/country.model';
 
 @Component({
@@ -25,7 +25,7 @@ export class CardComponent
 
     public countryInfo!: Observable<Countries>;
 
-    constructor(private readonly country: FlagService)
+    constructor(private readonly country: CountryService)
     { }
 
     // public ngOnInit(): void

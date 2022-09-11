@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FlagService } from 'src/core/services/country.service';
+import { CountryService } from 'src/core/services/country.service';
 import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit
 
     constructor(
         private readonly dialog: MatDialog,
-        private readonly country: FlagService
+        private readonly country: CountryService
     )
     { }
 
@@ -69,10 +69,6 @@ export class AppComponent implements OnInit
         {
             this.countries = res
         });
-        this.country.getCountryNames('colombia').subscribe((res: string) =>
-        {
-            this.name = res
-        })
     }
 
     public openDialog(): void

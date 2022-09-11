@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
-import { FlagService } from 'src/core/services/country.service';
+import { CountryService } from 'src/core/services/country.service';
 import { Countries } from 'src/core/services/models/country.model';
 
 interface Food
@@ -25,7 +25,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
     public names!: string;
 
     constructor(
-        private readonly countryServices: FlagService
+        private readonly countryServices: CountryService
     )
     { }
 
