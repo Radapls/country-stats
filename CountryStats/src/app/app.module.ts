@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { CoreModule } from 'src/core/core.module';
+import { SharedModule } from 'src/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
@@ -50,7 +51,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         MatButtonModule,
         MatSelectModule,
         MatIconModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        SharedModule
     ],
     providers: [],
     bootstrap: [ AppComponent ]

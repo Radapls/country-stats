@@ -3,7 +3,7 @@
         <form class="example-form">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Country</mat-label>
-                <input matInput aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+                <input matInput aria-label="State" [matAutocomplete]="auto" [formControl]="countriesControl">
                 <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let country of countries" [value]="country.name">
                         <img class="example-option-img" aria-hidden [src]="country.flags" height="25">

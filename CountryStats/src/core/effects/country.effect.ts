@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { map, switchMap } from 'rxjs';
@@ -25,8 +24,7 @@ export class CountryEffect
         private readonly actions$: Actions,
         private readonly countryService: CountryService,
         private readonly errorHandlingService: ErrorHandlingService,
-        private readonly store$: Store<AppState>,
-        private readonly router: Router
+        private readonly store$: Store<AppState>
     )
     { }
 }

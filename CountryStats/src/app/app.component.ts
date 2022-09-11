@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Observable, Subscription } from 'rxjs';
+import { CountriesApi } from 'src/core/api/countries.api';
 import { CountryService } from 'src/core/services/country.service';
+import { Countries } from 'src/core/services/models/country.model';
 import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
@@ -10,14 +13,19 @@ import { DialogComponent } from './dialog/dialog.component';
 })
 export class AppComponent implements OnInit
 {
-    public countries: Array<Array<string>> = []
+    public countries: Array<Countries> = []
     public cards: Array<any> = []
     public name!: string;
-    public blue!: string
+    public blue!: string;
+    public sub: Subscription = new Subscription();
+
+
+    public countries$: Observable<Array<Countries>> = this.api.getCountries$
 
     constructor(
         private readonly dialog: MatDialog,
-        private readonly country: CountryService
+        private readonly country: CountryService,
+        private readonly api: CountriesApi
     )
     { }
 
@@ -65,10 +73,8 @@ export class AppComponent implements OnInit
                 description: 'Check'
             }
         ];
-        this.country.getAllCountries().subscribe((res: any) =>
-        {
-            this.countries = res
-        });
+        this.sub.add(this.countries$.subscribe((value) =>
+            this.countries = value))
     }
 
     public openDialog(): void

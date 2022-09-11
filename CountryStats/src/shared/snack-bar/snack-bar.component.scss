@@ -12,7 +12,7 @@
 {
     color: $color;
     background: $background;
-    @include font-regular;
+    @include font-light;
     border-radius: 5px;
     padding: 7px 15px;
     min-height: 48px;
@@ -27,22 +27,22 @@
         color: $lblColor;
         &:active
         {
-            background-color: $black-gradient;
+            background-color: $Very-Light-Gray;
         }
     }
 }
 
 .default
 {
-    @include base(rgba($white, .7), $deep-black, $primary-pink);
+    @include base(rgba($White, .7), $Dark-Blue, $Dark-Gray);
 }
 
 .success
 {
-    @include base($white, $primary-green, $white);
+    @include base($White, $Dark-Blue, $White);
 }
 
 .warning
 {
-    @include base($white, $primary-yellow, $white);
+    @include base($White, $Dark-Blue, $White);
 }
