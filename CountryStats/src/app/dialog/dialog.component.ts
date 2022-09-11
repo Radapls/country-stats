@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CountryService } from 'src/core/services/country.service';
 
 @Component({
     selector: 'app-dialog',
@@ -10,8 +9,7 @@ import { CountryService } from 'src/core/services/country.service';
 export class DialogComponent implements OnInit
 {
     constructor(
-        private readonly dialog: MatDialog,
-        private readonly country: CountryService)
+        private readonly dialog: MatDialog)
     { }
 
     ngOnInit(): void

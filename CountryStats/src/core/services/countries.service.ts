@@ -6,7 +6,7 @@ import { Countries } from './models/country.model';
 
 
 @Injectable()
-export class CountryService
+export class CountriesService
 {
     constructor(private readonly http: HttpClient)
     { }

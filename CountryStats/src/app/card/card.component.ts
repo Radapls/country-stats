@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
-import { CountryService } from 'src/core/services/country.service';
+import { Observable, Subscription } from 'rxjs';
+import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries } from 'src/core/services/models/country.model';
 
 @Component({
@@ -23,20 +23,22 @@ export class CardComponent
     // @Input()
     // public countries!: Countries
 
-    public countryInfo!: Observable<Countries>;
+    public countryInfo!: Observable<Array<Countries>>;
 
-    constructor(private readonly country: CountryService)
+    public sub: Subscription = new Subscription();
+    public countries$: Observable<Array<Countries>> = this.api.getCountries$
+    public countries: Array<Countries> = []
+
+    constructor(
+        private readonly api: CountriesApi)
     { }
 
-    // public ngOnInit(): void
-    // {
-    //     this.country.getAllCountries().subscribe((res: any) =>
-    //     {
-    //         this.countryInfo = res
-    //     });
-    //     this.country.getCountryNames('colombia').subscribe((res: string) =>
-    //     {
-    //         this.name = res
-    //     })
-    // };
+    public ngOnInit(): void
+    {
+        this.sub.add(this.countries$.subscribe((res) =>
+            this.countries = res
+        ));
+    };
+
+
 }

@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { map, switchMap } from 'rxjs';
-import { CountryService } from '../services/country.service';
+import { CountriesService } from '../services/countries.service';
 import { ErrorHandlingService } from '../services/error-handling.service';
-import { loadCountries, loadCountriesError, loadCountriesSuccess } from '../stores/country/actions.country';
+import { loadCountries, loadCountriesError, loadCountriesSuccess } from '../stores/countries/countries.actions';
 import { AppState } from '../stores/store';
 
 @Injectable()
-export class CountryEffect
+export class CountriesEffect
 {
     public getAllCountries$ = createEffect(() => this.actions$.pipe(
         ofType(loadCountries),
         switchMap(() =>
-            this.countryService.getAllCountries()),
+            this.countriesService.getAllCountries()),
         map((response) => loadCountriesSuccess({
             countries: response
         })),
@@ -22,7 +22,7 @@ export class CountryEffect
 
     constructor(
         private readonly actions$: Actions,
-        private readonly countryService: CountryService,
+        private readonly countriesService: CountriesService,
         private readonly errorHandlingService: ErrorHandlingService,
         private readonly store$: Store<AppState>
     )

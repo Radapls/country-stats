@@ -1,9 +1,9 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { EffectsModule as NGEffectsModule, EffectsRootModule } from '@ngrx/effects';
-import { CountryEffect } from './country.effect';
+import { CountriesEffect } from './countries.effect';
 
 const effects: ModuleWithProviders<EffectsRootModule> = NGEffectsModule.forRoot([
-    CountryEffect
+    CountriesEffect
 ]);
 
 @NgModule({

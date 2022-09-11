@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
-import { CountryService } from 'src/core/services/country.service';
 import { Countries } from 'src/core/services/models/country.model';
 import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: [ './app.component.scss' ]
+    styleUrls: [ './app.component.scss' ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit
 {
@@ -24,7 +24,6 @@ export class AppComponent implements OnInit
 
     constructor(
         private readonly dialog: MatDialog,
-        private readonly country: CountryService,
         private readonly api: CountriesApi
     )
     { }
@@ -73,8 +72,6 @@ export class AppComponent implements OnInit
                 description: 'Check'
             }
         ];
-        this.sub.add(this.countries$.subscribe((value) =>
-            this.countries = value))
     }
 
     public openDialog(): void

@@ -1,16 +1,16 @@
 import { Action, ActionReducerMap } from '@ngrx/store';
-import { CountryReducer } from './country/reducer.country';
-import { CountryStore } from './country/store.country';
+import { CountriesReducer } from './countries/countries.reducer';
+import { CountriesStore } from './countries/countries.store';
 
 export interface AppState
 {
-    country: CountryStore;
+    countries: CountriesStore;
 }
 
 /**
  * App root store containing all reducers.
  */
 export const reducers: ActionReducerMap<object, Action> = {
-    country: CountryReducer
+    countries: CountriesReducer
 
 };
