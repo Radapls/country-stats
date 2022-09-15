@@ -4,8 +4,9 @@
     <app-toolbar></app-toolbar>
 
     <div class="grid" fxLayout="start wrap">
-        <app-card *ngFor="let country of countries" [flag]="country.cca2" [title]="country.cca2"
-            [description]="country.cca3" mat-button (click)="openDialog()">
+        <app-card *ngFor="let country of countries" [flag]="country.flags.png" [name]="country.name.common"
+            [population]="country.cca3" [region]="country.region" [capital]="country.capital" mat-button
+            (click)="openDialog()">
         </app-card>
     </div>
 

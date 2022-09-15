@@ -4,7 +4,7 @@
 input, select
 {
     @include font-bold;
-    @include font-style(16px, $White, 36px);
+    @include font-style(16px, red, 36px);
     margin: 20px;
 	padding: 10px;
 	border: none;

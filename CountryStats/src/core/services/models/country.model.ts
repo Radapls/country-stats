@@ -3,7 +3,7 @@ export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<C
 
 export interface CountryBase
 {
-    name: Array<Name>;
+    name: Name;
     tdl: Array<string>;
     cca2: string;
     cnn3: string;
@@ -14,7 +14,7 @@ export interface CountryBase
     unMember: boolean;
     currencies: Array<Currencies>;
     idd: Array<string>;
-    capital: Array<string>;
+    capital: string;
     altSpellings: Array<string>;
     region: string;
     subregion: string;
@@ -31,7 +31,7 @@ export interface CountryBase
     car: Array<string>;
     timeZone: Array<string>;
     continent: Array<string>;
-    flags: Array<Flags>;
+    flags: Flags;
     coatOfArms: Array<CoatOfArms>;
     startOfWeek: string;
     capitalInfo: Array<string>;

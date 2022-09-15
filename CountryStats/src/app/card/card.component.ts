@@ -15,10 +15,16 @@ export class CardComponent
     public flag!: string;
 
     @Input()
-    public title!: string;
+    public name!: string;
 
     @Input()
-    public description!: string;
+    public population!: string;
+
+    @Input()
+    public region!: string;
+
+    @Input()
+    public capital!: string;
 
     // @Input()
     // public countries!: Countries
