@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewContainerRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
@@ -19,8 +19,6 @@ export class AppComponent implements OnInit
     public blue!: string;
     public sub: Subscription = new Subscription();
 
-    public world: string = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag-map_of_the_world_%282018%29.png/800px-Flag-map_of_the_world_%282018%29.png?20220620061653'
-
     public countries$: Observable<Array<Countries>> = this.api.getCountries$
     public countries: Array<Countries> = []
 
@@ -30,7 +28,8 @@ export class AppComponent implements OnInit
 
     constructor(
         private readonly dialog: MatDialog,
-        private readonly api: CountriesApi
+        private readonly api: CountriesApi,
+        private viewContainerRef: ViewContainerRef
     )
     { }
 

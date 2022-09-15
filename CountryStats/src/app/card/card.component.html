@@ -1,11 +1,23 @@
 <div class="card" fxLayout="column">
-    <img [src]=flag>
+    <img [src]=flag draggable="false">
     <div>
         <h1> {{ name }}</h1>
         <div class="sub-container">
-            <p>{{ population }}</p>
-            <p>{{ region }}</p>
-            <p>{{ capital}}</p>
+            <div fxLayout="row" fxLayoutGap="5px">
+                <h2> Population: </h2>
+                <h3> {{ population }}</h3>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="5px">
+                <h2> Region: </h2>
+                <h3> {{ region }}</h3>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="5px">
+                <h2> Capital: </h2>
+                <h3> {{ capital }}</h3>
+            </div>
+
         </div>
     </div>
 </div>

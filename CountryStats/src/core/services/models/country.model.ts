@@ -27,6 +27,7 @@ export interface CountryBase
     flag: string;
     maps: Array<string>;
     gini: Array<string>;
+    population: string;
     fifa: string;
     car: Array<string>;
     timeZone: Array<string>;
