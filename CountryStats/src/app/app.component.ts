@@ -40,9 +40,10 @@ export class AppComponent implements OnInit
             this.countries = value))
     }
 
-    public openDialog(): void
+    public openDialog(countriesInfo: Countries): void
     {
         const dialogRef = this.dialog.open(DialogComponent, {
+            data: countriesInfo,
             height: '800px',
             width: '800px'
         });
