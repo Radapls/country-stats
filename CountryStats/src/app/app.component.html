@@ -1,4 +1,6 @@
-<div class="container">
+<app-loading *ngIf="(loading$ | async) === true"></app-loading>
+
+<div class="container" *ngIf="(loading$ | async) === false">
     <app-header></app-header>
 
     <app-toolbar></app-toolbar>
@@ -10,7 +12,7 @@
         </app-card>
     </div>
 
-    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"
-        [color]="'primary'">
+    <mat-paginator [length]="countries.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 50]"
+        aria-label="Select page" [color]="'primary'">
     </mat-paginator>
 </div>

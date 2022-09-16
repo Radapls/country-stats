@@ -4,8 +4,8 @@
 
 h1
 {
-@include font-bold;
-@include font-style(20px, $Very-Dark-Blue, 36px);
+@include font-ExtraBold;
+@include font-style(36px, $Very-Dark-Blue, 36px);
 }
 
 h2

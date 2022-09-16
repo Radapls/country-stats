@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>{{ data.name.common }}</h2>
+<h1 mat-dialog-title>{{ data.name.common }}</h1>
 <mat-dialog-content>
     <p>{{ data.name.nativeName }}</p>
     <p>{{ data.population }}</p>
@@ -7,13 +7,7 @@
     <p>{{ data.capital }}</p>
     <p>{{ data.tdl }}</p>
     <p>{{ data.currencies[0] | currency }}</p>
-    <p>{{ data.languages }}</p>
-
-
-
-
-
-
+    <p>{{ data.languages[0] }}</p>
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">

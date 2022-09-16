@@ -19,6 +19,8 @@ export class AppComponent implements OnInit
     public sub: Subscription = new Subscription();
 
     public countries$: Observable<Array<Countries>> = this.api.getCountries$
+    public loading$: Observable<boolean> = this.api.loading$
+
     public countries: Array<Countries> = []
 
     public flags$: Observable<Array<Flags>> = this.api.getFlags$

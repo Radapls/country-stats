@@ -62,7 +62,7 @@ export interface Name extends CountryBase
 {
     common: string;
     official: string;
-    nativeName: Array<Array<string>>;
+    nativeName: Array<string>;
 }
 
 export interface Flags extends CountryBase

@@ -2,15 +2,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCommonModule } from '@angular/material/core';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
@@ -21,6 +12,7 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
+import { LoadingComponent } from './loading/loading.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 @NgModule({
     declarations: [
@@ -28,7 +20,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         HeaderComponent,
         CardComponent,
         ToolbarComponent,
-        DialogComponent
+        DialogComponent,
+        LoadingComponent
     ],
     imports: [
         BrowserModule,
@@ -38,15 +31,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         FormsModule,
         CommonModule,
         FlexLayoutModule,
-        MatAutocompleteModule,
-        MatPaginatorModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatSelectModule,
-        MatIconModule,
-        MatInputModule,
-        MatSnackBarModule,
-        MatCommonModule,
         CoreModule,
         SharedModule,
         TranslateModule.forRoot()
