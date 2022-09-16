@@ -6,7 +6,7 @@
     <div class="grid" fxLayout="start wrap">
         <app-card *ngFor="let country of countries" [flag]="country.flags.png" [name]="country.name.common"
             [population]="country.population" [region]="country.region" [capital]="country.capital" mat-button
-            (click)="openDialog(country)">
+            (click)="openDialog(country)" draggable="false">
         </app-card>
     </div>
 

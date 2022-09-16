@@ -16,7 +16,6 @@ export class AppComponent implements OnInit
 
     public cards: Array<any> = []
     public name!: string;
-    public blue!: string;
     public sub: Subscription = new Subscription();
 
     public countries$: Observable<Array<Countries>> = this.api.getCountries$
@@ -29,7 +28,7 @@ export class AppComponent implements OnInit
     constructor(
         private readonly dialog: MatDialog,
         private readonly api: CountriesApi,
-        private viewContainerRef: ViewContainerRef
+        private readonly viewContainerRef: ViewContainerRef
     )
     { }
 
@@ -41,12 +40,11 @@ export class AppComponent implements OnInit
 
     public openDialog(countriesInfo: Countries): void
     {
-        const dialogRef = this.dialog.open(DialogComponent, {
+        this.dialog.open(DialogComponent, {
             data: countriesInfo,
+            viewContainerRef: this.viewContainerRef,
             height: '800px',
             width: '800px'
         });
-
-        dialogRef.close();
     }
 }

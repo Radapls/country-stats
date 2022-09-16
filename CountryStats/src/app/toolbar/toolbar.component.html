@@ -10,7 +10,7 @@
     <div class="select">
         <mat-form-field>
             <select matNativeControl>
-                <option *ngFor="let name of countries">{{ name.common }}</option>
+                <option *ngFor="let country of countries"> {{ country.name.common }}</option>
             </select>
         </mat-form-field>
     </div>

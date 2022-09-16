@@ -4,7 +4,7 @@
 input, select
 {
     @include font-bold;
-    @include font-style(16px, red, 36px);
+    @include font-style(16px, $Very-Dark-Blue, 36px);
     margin: 20px;
 	padding: 10px;
 	border: none;
@@ -20,7 +20,8 @@ input, select
 }
 
 .search, .select
-{width: 100%;
+{
+    width: 100%;
 }
 
 .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
