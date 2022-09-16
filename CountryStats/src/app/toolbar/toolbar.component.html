@@ -1,13 +1,13 @@
-<div fxLayout="row" fxLayoutAlign="space-between">
-    <div class="search" fxLayout="column" fxLayoutAlign="space-between stretch">
+<div fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="search" fxLayout="row">
         <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-form-field class="example-full-width" appearance="standard">
                 <input matInput>
             </mat-form-field>
         </form>
     </div>
 
-    <div class="select">
+    <div class="select" fxLayout="row">
         <mat-form-field>
             <select matNativeControl>
                 <option *ngFor="let country of countries"> {{ country.name.common }}</option>

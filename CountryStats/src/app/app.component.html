@@ -5,7 +5,7 @@
 
     <app-toolbar></app-toolbar>
 
-    <div class="grid" fxLayout="start wrap">
+    <div class="grid" fxLayout="row wrap" fxLayoutAlign="center" fxlayout="column wrap">
         <app-card *ngFor="let country of countries" [flag]="country.flags.png" [name]="country.name.common"
             [population]="country.population" [region]="country.region" [capital]="country.capital" mat-button
             (click)="openDialog(country)" draggable="false">
