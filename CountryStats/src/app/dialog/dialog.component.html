@@ -1,13 +1,53 @@
 <h1 mat-dialog-title>{{ data.name.common }}</h1>
 <mat-dialog-content>
-    <p>{{ data.name.nativeName }}</p>
-    <p>{{ data.population }}</p>
-    <p>{{ data.region }}</p>
-    <p>{{ data.subregion }}</p>
-    <p>{{ data.capital }}</p>
-    <p>{{ data.tdl }}</p>
-    <p>{{ data.currencies[0] | currency }}</p>
-    <p>{{ data.languages[0] }}</p>
+    <ng-container>
+
+        <div fxLayout="row" fxFlexAlign="center center" fxLayoutGap="20px">
+
+
+            <section fxLayout="column" fxFlexAlign="center center">
+                <img [src]="data.flags.png" alt="Flag of the country">
+            </section>
+
+
+            <section>
+                <span fxLayout="row" fxFlexAlign="center center">
+                    <mat-icon aria-hidden="false" fontSet="white" aria-label="Example home icon" fontIcon="badge">
+                    </mat-icon>
+                    <p>{{ data.name.nativeName }}</p>
+                </span>
+                <span fxLayout="row" fxFlexAlign="center center">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups"></mat-icon>
+                    <p>{{ data.population }}</p>
+                </span>
+                <span fxLayout="row" fxFlexAlign="center center">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="location_city"></mat-icon>
+                    <p>{{ data.region }}</p>
+                </span>
+                <span fxLayout="row" fxFlexAlign="center center">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="location_city"></mat-icon>
+                    <p>{{ data.subregion }}</p>
+                </span>
+                <span fxLayout="row" fxFlexAlign="center center">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="location_city"></mat-icon>
+                    <p>{{ data.capital }}</p>
+                </span>
+                <span fxLayout="row" fxFlexAlign="center center">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="domain"></mat-icon>
+                    <p>{{ data.tdl }}</p>
+                </span>
+                <span fxLayout="row" fxFlexAlign="center center">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="attach_money"></mat-icon>
+                    <p>{{ data.currencies[0] | currency }}</p>
+                </span>
+                <span fxLayout="row" fxFlexAlign="center center">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="language"></mat-icon>
+                    <p>{{ data.languages.entries }}</p>
+                </span>
+            </section>
+
+        </div>
+    </ng-container>
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">

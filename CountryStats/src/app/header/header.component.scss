@@ -2,7 +2,7 @@
 @import '/src/styles/fonts.scss';
 @import '/src/styles/icons.scss';
 
-.header
+header
 {
 @include font-bold;
 @include font-style(16px, $White, 36px);
@@ -10,6 +10,9 @@ height: 80px;
 padding: .5rem;
 background-color: $Blue;
 border-bottom: solid 1px $Blue;
+top: 0;
+position: fixed;
+width: 100%;
 }
 
 .dark-mode

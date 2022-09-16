@@ -1,6 +1,11 @@
 @import './src/styles/colors.scss';
 @import './src/styles/fonts.scss';
 
+section
+{
+    margin-top: 100px
+}
+
 input
 {
     @include font-bold;
@@ -11,6 +16,7 @@ input
 	border-radius: 5px;
     background-color: $Blue;
     border: 2px solid $Dark-Gray;
+    width: 100%;
 }
 
 select
@@ -23,6 +29,7 @@ select
 	border-radius: 5px;
     background-color: $Blue;
     border: 2px solid $Dark-Gray;
+    width: 100%;
 }
 
 select.mat-input-element:not(:disabled) {

@@ -1,6 +1,10 @@
 @import './src/styles/colors.scss';
 @import './src/styles/fonts.scss';
 
+mat-dialog-content
+{
+    height: 85%;
+}
 
 h1
 {
@@ -24,4 +28,5 @@ p
 {
 @include font-ExtraBold;
 @include font-style(14px, $Very-Dark-Blue, 12px);
+margin: 8px;
 }

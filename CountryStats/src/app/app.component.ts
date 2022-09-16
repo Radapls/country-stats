@@ -45,8 +45,8 @@ export class AppComponent implements OnInit
         this.dialog.open(DialogComponent, {
             data: countriesInfo,
             viewContainerRef: this.viewContainerRef,
-            height: '800px',
-            width: '800px'
+            width: '1600px',
+            height: '800px'
         });
     }
 }
