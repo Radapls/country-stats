@@ -18,7 +18,7 @@ export class CardComponent
     public name!: string;
 
     @Input()
-    public population!: string;
+    public population!: number;
 
     @Input()
     public region!: string;
