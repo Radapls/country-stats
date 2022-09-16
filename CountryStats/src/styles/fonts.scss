@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css2?family=Montserrat);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap);
 
 $font-family: 'Montserrat';
 
@@ -16,16 +20,22 @@ $font-family: 'Montserrat';
 @mixin font-medium
 {
     @include font;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 @mixin font-bold
 {
     @include font;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 @mixin font-ExtraBold
+{
+    @include font;
+    font-weight: 800;
+}
+
+@mixin font-black
 {
     @include font;
     font-weight: 900;

@@ -13,6 +13,7 @@ import { WUI_DIALOG_DATA } from 'src/core/services/models/dialog.model';
 export class DialogComponent implements OnInit
 {
     public countries$: Observable<Array<Countries>> = this.api.getCountries$
+    public loading$: Observable<boolean> = this.api.loading$
     public sub: Subscription = new Subscription();
     public countries: Array<Countries> = []
 

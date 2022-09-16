@@ -34,7 +34,7 @@ export interface CountryBase
     timeZone: Array<string>;
     continent: Array<string>;
     flags: Flags;
-    coatOfArms: Array<CoatOfArms>;
+    coatOfArms: CoatOfArms;
     startOfWeek: string;
     capitalInfo: Array<string>;
     postalCode: Array<string>;
@@ -62,7 +62,7 @@ export interface Name extends CountryBase
 {
     common: string;
     official: string;
-    nativeName: Array<string>;
+    nativeName: Array<Array<string>>;
 }
 
 export interface Flags extends CountryBase

@@ -7,9 +7,16 @@ p
     @include font-style(40px, $White, 24px);
 }
 
+footer
+{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
 .container
 {
-background-color: $Very-Dark-Blue
+background-color: $Dark-Blue
 }
 
 

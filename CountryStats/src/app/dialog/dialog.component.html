@@ -10,6 +10,11 @@
             </section>
 
 
+            <section fxLayout="column" fxFlexAlign="center center">
+                <img [src]="data.coatOfArms.png" alt="Coat of Arms of the country">
+            </section>
+
+
             <section>
                 <span fxLayout="row" fxFlexAlign="center center">
                     <mat-icon aria-hidden="false" fontSet="white" aria-label="Example home icon" fontIcon="badge">
@@ -18,7 +23,7 @@
                 </span>
                 <span fxLayout="row" fxFlexAlign="center center">
                     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups"></mat-icon>
-                    <p>{{ data.population }}</p>
+                    <p>{{ data.population | number:'1.0-4' || '' }}</p>
                 </span>
                 <span fxLayout="row" fxFlexAlign="center center">
                     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="location_city"></mat-icon>
@@ -42,7 +47,7 @@
                 </span>
                 <span fxLayout="row" fxFlexAlign="center center">
                     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="language"></mat-icon>
-                    <p>{{ data.languages.entries }}</p>
+                    <p>{{ data.languages }}</p>
                 </span>
             </section>
 
