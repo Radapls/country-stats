@@ -24,14 +24,14 @@ export const loadCountriesError = createAction(
 export const reloadName = createAction(
     `${storeTag} Load Name of Country`,
     props<{
-        name: string;
+        searchName: string;
     }>()
 );
 
 export const loadName = createAction(
     `${storeTag} Load Name of Country`,
     props<{
-        name: string;
+        searchName: string;
     }>()
 );
 

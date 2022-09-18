@@ -4,8 +4,8 @@
     </div>
 
     <div class="select" fxLayout="row">
-        <select>
-            <option *ngFor="let country of countries"> {{ country.name.common }}</option>
+        <select value="filter">
+            <option *ngFor="let region of regions"> {{ region}}</option>
         </select>
     </div>
 </div>

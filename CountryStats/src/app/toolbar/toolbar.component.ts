@@ -25,8 +25,9 @@ export class ToolbarComponent implements OnInit, OnDestroy
     @Output()
     public refresh: EventEmitter<Event> = new EventEmitter();
 
-    nameControl = new FormControl('');
-    filteredNames: Observable<Array<Countries>>;
+    public regions: Array<string> = [ 'Africa', 'America', 'Asia', 'Europa', 'Oceania' ]
+    public nameControl = new FormControl('');
+    public filteredNames: Observable<Array<Countries>>;
 
     public sub: Subscription = new Subscription();
     public countriesControl = new FormControl('');

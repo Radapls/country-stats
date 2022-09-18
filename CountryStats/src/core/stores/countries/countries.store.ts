@@ -7,7 +7,7 @@ export interface CountriesStore
 {
     loading: boolean;
     countries: Array<Countries>;
-    name: string;
+    searchName: Array<Countries>;
     error: ErrorPayload;
 
 }

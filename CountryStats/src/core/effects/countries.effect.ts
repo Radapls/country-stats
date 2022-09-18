@@ -22,7 +22,7 @@ export class CountriesEffect
         ofType(loadName, reloadName),
         switchMap((action) =>
             this.countriesService.getCountryName(
-                action.name
+                action.searchName
             )),
         map((response) => loadNameSuccess({
             country: response

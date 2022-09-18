@@ -11,7 +11,7 @@ export class CountriesApi
 {
 
     public getCountries$: Observable<Array<Countries>> = this.store.select(getCountries);
-    public getName$: Observable<string> = this.store.select(getName)
+    public getName$: Observable<Array<Countries>> = this.store.select(getName)
     public loading$: Observable<boolean> = this.store.select(getCountriesLoading);
 
 
@@ -24,8 +24,8 @@ export class CountriesApi
         this.store.dispatch(loadCountries());
     }
 
-    public loadName(name: string): void
+    public loadName(searchName: string): void
     {
-        this.store.dispatch(loadName({ name }));
+        this.store.dispatch(loadName({ searchName }));
     }
 }

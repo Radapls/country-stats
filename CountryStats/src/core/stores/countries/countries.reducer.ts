@@ -4,7 +4,7 @@ import { CountriesStore } from './countries.store';
 
 export const initialState: Partial<CountriesStore> = {
     loading: false,
-    name: undefined,
+    searchName: undefined,
     countries: []
 };
 

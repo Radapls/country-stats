@@ -15,5 +15,5 @@ export const getCountries = createSelector(
 
 export const getName = createSelector(
     getCountryState,
-    (store: CountriesStore) => store.name
+    (store: CountriesStore) => store.searchName
 );

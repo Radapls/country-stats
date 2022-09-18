@@ -20,7 +20,7 @@ export class AppComponent implements OnInit
     public sub: Subscription = new Subscription();
 
     public countries$: Observable<Array<Countries>> = this.api.getCountries$
-    public names$: Observable<string> = this.api.getName$
+    public searchName$: Observable<Array<Countries>> = this.api.getName$
     public loading$: Observable<boolean> = this.api.loading$
 
     public countries: Array<Countries> = []
