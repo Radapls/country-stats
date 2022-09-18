@@ -1,11 +1,11 @@
-<section fxLayout="row" fxLayoutAlign="space-around center">
+<div class="toolbar" fxLayout="row" fxLayoutAlign="space-around center">
     <div class="search" fxLayout="column" fxLayoutAlign="start">
-        <input matInput>
+        <input>
     </div>
 
     <div class="select" fxLayout="row">
-        <select matNativeControl>
+        <select>
             <option *ngFor="let country of countries"> {{ country.name.common }}</option>
         </select>
     </div>
-</section>
+</div>

@@ -26,29 +26,15 @@ background-color: $Dark-Blue
     grid-template-columns: repeat(4,1fr);
 }
 
-.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
+.mat-paginator, .mat-paginator-page-size, .mat-select-trigger, .mat-select, .mat-option-text, .mat-select-panel {
     color: $White;
-    background: $Very-Dark-Blue;
+    background: $Dark-Blue;
+    box-shadow: 3px 2px 10px 1px $Very-Dark-Blue;
+    @include font-medium;
+    @include font-style(12px, $White, 12px);
 }
 
-.mat-select {
-    color: $White;
-}
-
-.mat-option {
-    -webkit-tap-highlight-color: $Very-Dark-Blue
-}
-
-.mat-button-disabled.mat-button-disabled {
-    color: $White
-}
-
-
-.mat-select-value
-{
-    color: $White;
-}
-
-.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
-    color: rgb(255, 255, 255);
+.mat-form-field {
+    @include font-medium;
+    @include font-style(12px, $White, 12px);
 }

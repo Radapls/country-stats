@@ -1,9 +1,23 @@
 @import './src/styles/colors.scss';
 @import './src/styles/fonts.scss';
 
-mat-dialog-content
+.mat-dialog-content
 {
-    height: 85%;
+    align-content: center;
+    height: 100%;
+    padding: 40px 80px 40px 80px
+}
+
+.container
+{
+    height: auto;
+    align-items: center;
+    display: flex;
+}
+
+img
+{
+    box-shadow: 3px 2px 10px 1px $Very-Dark-Blue;
 }
 
 h1
