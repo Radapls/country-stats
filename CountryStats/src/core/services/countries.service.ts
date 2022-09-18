@@ -16,10 +16,11 @@ export class CountriesService
         return this.http.get<Array<Countries>>(api.all());
     }
 
-    // public getCountryNames(name: string): Observable<any>
-    // {
-    //     return this.http.get(api.name(name));
-    // }
+    public getCountryName(name: string): Observable<Array<Countries>>
+    {
+        return this.http.get<Array<Countries>>(api.name(name
+        ));
+    }
 
     // public getCountryCode(code: string): Observable<any>
     // {

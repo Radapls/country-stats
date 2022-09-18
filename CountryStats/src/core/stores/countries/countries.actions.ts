@@ -20,3 +20,31 @@ export const loadCountriesError = createAction(
         error: ErrorPayload;
     }>()
 );
+
+export const reloadName = createAction(
+    `${storeTag} Load Name of Country`,
+    props<{
+        name: string;
+    }>()
+);
+
+export const loadName = createAction(
+    `${storeTag} Load Name of Country`,
+    props<{
+        name: string;
+    }>()
+);
+
+export const loadNameSuccess = createAction(
+    `${storeTag} Load Name of Country Success`,
+    props<{
+        country: Array<Countries>;
+    }>()
+);
+
+export const loadNameError = createAction(
+    `${storeTag} Load Name of Country Error`,
+    props<{
+        error: ErrorPayload;
+    }>()
+);

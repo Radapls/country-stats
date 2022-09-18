@@ -13,7 +13,7 @@ export const getCountries = createSelector(
     (store: CountriesStore) => store.countries
 );
 
-export const getFlags = createSelector(
+export const getName = createSelector(
     getCountryState,
-    (store: CountriesStore) => store.flags
+    (store: CountriesStore) => store.name
 );

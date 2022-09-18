@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewContainerRef } from '@a
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
-import { Countries, Flags } from 'src/core/services/models/country.model';
+import { Countries } from 'src/core/services/models/country.model';
 import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
@@ -13,19 +13,17 @@ import { DialogComponent } from './dialog/dialog.component';
 })
 export class AppComponent implements OnInit
 {
+    public search?: string;
 
     public cards: Array<any> = []
     public name!: string;
     public sub: Subscription = new Subscription();
 
     public countries$: Observable<Array<Countries>> = this.api.getCountries$
+    public names$: Observable<string> = this.api.getName$
     public loading$: Observable<boolean> = this.api.loading$
 
     public countries: Array<Countries> = []
-
-    public flags$: Observable<Array<Flags>> = this.api.getFlags$
-    public flags: Array<Flags> = []
-
 
     constructor(
         private readonly dialog: MatDialog,
@@ -48,5 +46,12 @@ export class AppComponent implements OnInit
             width: '1600px',
             height: '800px'
         });
+    }
+
+    public onNameFilter(name: string): void
+    {
+        this.search = name;
+        this.api.loadName(name)
+        console.log(name)
     }
 }

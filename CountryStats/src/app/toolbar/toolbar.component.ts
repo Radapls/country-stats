@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { map, Observable, startWith, Subscription } from 'rxjs';
+import { debounceTime, map, Observable, startWith, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries, Name } from 'src/core/services/models/country.model';
 
@@ -12,6 +12,18 @@ import { Countries, Name } from 'src/core/services/models/country.model';
 })
 export class ToolbarComponent implements OnInit, OnDestroy
 {
+    private searchEvent: EventEmitter<string> = new EventEmitter();
+
+    @Input()
+    public debounceTime: number = 2000;
+
+    @Output()
+    public search: Observable<string> = this.searchEvent.pipe(
+        debounceTime(this.debounceTime)
+    );
+
+    @Output()
+    public refresh: EventEmitter<Event> = new EventEmitter();
 
     nameControl = new FormControl('');
     filteredNames: Observable<Array<Countries>>;
@@ -23,6 +35,32 @@ export class ToolbarComponent implements OnInit, OnDestroy
 
     public countries$: Observable<Array<Countries>> = this.api.getCountries$
     public countries!: Array<Countries>;
+
+    public searchContentsValue!: string;
+    public isRefresh!: boolean;
+
+    public get searchContents(): string
+    {
+        return this.searchContentsValue;
+    }
+
+    public set searchContents(search: string)
+    {
+        this.searchContentsValue = search;
+        if (!this.isRefresh)
+        {
+            this.searchEvent.emit(search);
+        }
+        this.isRefresh = false;
+    }
+
+    public onRefresh(): void
+    {
+        this.isRefresh = true;
+        this.searchContents = '';
+        this.refresh.emit();
+    }
+
 
     constructor(
         private readonly api: CountriesApi

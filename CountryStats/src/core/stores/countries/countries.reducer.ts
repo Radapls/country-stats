@@ -1,9 +1,10 @@
 import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
-import { loadCountries, loadCountriesError, loadCountriesSuccess } from './countries.actions';
+import { loadCountries, loadCountriesError, loadCountriesSuccess, loadName, loadNameError, loadNameSuccess, reloadName } from './countries.actions';
 import { CountriesStore } from './countries.store';
 
 export const initialState: Partial<CountriesStore> = {
     loading: false,
+    name: undefined,
     countries: []
 };
 
@@ -19,6 +20,25 @@ const reducer: ActionReducer<Partial<CountriesStore>, Action> = createReducer(
         loading: false
     })),
     on(loadCountriesError, (state, action) => ({
+        ...state,
+        error: action.error,
+        loading: false
+    })),
+    on(reloadName, (state) => ({
+        ...state,
+        loading: true,
+        name: undefined
+    })),
+    on(loadName, (state) => ({
+        ...state,
+        loading: true
+    })),
+    on(loadNameSuccess, (state, action) => ({
+        ...state,
+        country: action.country,
+        loading: false
+    })),
+    on(loadNameError, (state, action) => ({
         ...state,
         error: action.error,
         loading: false
