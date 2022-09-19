@@ -1,17 +1,10 @@
 <h1 mat-dialog-title>{{ data.name.common }}</h1>
-<mat-dialog-content fxLayout="center" fxLayout="column">
-    <div class="container" fxLayout="row" fxFlexAlign="space-between center" fxLayoutGap="20px">
+<mat-dialog-content>
+    <div fxLayout="row" fxLayoutAlign="start space-evenly" fxLayoutGap="20px">
 
-        <section fxLayout="column" fxFlexAlign="center center">
-            <img [src]="data.flags.png" alt="Flag of the country">
-        </section>
+        <img [src]="data.coatOfArms.png" alt="Coat of Arms of the country" width="25%">
 
-        <section fxLayout="column" fxFlexAlign="center center">
-            <img [src]="data.coatOfArms.png" alt="Coat of Arms of the country" height="150px" width="150px">
-        </section>
-
-
-        <section>
+        <div fxLayout="column">
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontSet="white" aria-label="Example home icon" fontIcon="badge">
                 </mat-icon>
@@ -45,7 +38,7 @@
                 <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="language"></mat-icon>
                 <p>{{ data.languages.spa }}</p>
             </span>
-        </section>
+        </div>
 
     </div>
 

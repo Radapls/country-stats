@@ -43,8 +43,9 @@ export class AppComponent implements OnInit
         this.dialog.open(DialogComponent, {
             data: countriesInfo,
             viewContainerRef: this.viewContainerRef,
-            width: '1600px',
-            height: '800px'
+            maxWidth: '800px',
+            maxHeight: '800px',
+            minWidth: '100px'
         });
     }
 
@@ -52,6 +53,5 @@ export class AppComponent implements OnInit
     {
         this.search = name;
         this.api.loadName(name)
-        console.log(name)
     }
 }
