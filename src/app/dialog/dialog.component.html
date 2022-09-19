@@ -2,7 +2,8 @@
 <mat-dialog-content>
     <div fxLayout="row" fxLayoutAlign="start space-evenly" fxLayoutGap="20px">
 
-        <img [src]="data.coatOfArms.png" alt="Coat of Arms of the country" width="35%" (load)="'lazy'">
+        <img [src]="data.coatOfArms.png" alt="Coat of Arms of the country" width="35%" (load)="'lazy'"
+            draggable="false">
 
         <div fxLayout="column">
             <span fxLayout="row" fxFlexAlign="center center">
@@ -28,15 +29,15 @@
             </span>
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontIcon="domain"></mat-icon>
-                <p>{{ data.tdl }}</p>
+                <p>{{ data.tdl[0] }}</p>
             </span>
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontIcon="attach_money"></mat-icon>
-                <p>{{ data.currencies[0] | currency }}</p>
+                <p>{{ data.currencies.currency }}</p>
             </span>
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontIcon="language"></mat-icon>
-                <p>{{ data.languages.spa }}</p>
+                <p>{{ data.languages.entries }}</p>
             </span>
         </div>
 

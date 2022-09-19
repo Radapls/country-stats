@@ -1,10 +1,10 @@
-export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<CoatOfArms> & Partial<Languages>;
+export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<CoatOfArms> & Partial<Languages> & Partial<Currency>;
 
 
 export interface CountryBase
 {
     name: Name;
-    tdl: string;
+    tdl: Array<string>;
     cca2: string;
     cnn3: string;
     cca3: string;
@@ -12,7 +12,7 @@ export interface CountryBase
     independent: boolean;
     status: string;
     unMember: boolean;
-    currencies: any;
+    currencies: Currency;
     idd: Array<string>;
     capital: string;
     altSpellings: Array<string>;
@@ -21,7 +21,7 @@ export interface CountryBase
     translate: Array<string>;
     latLng: Array<string>;
     landlocked: boolean;
-    languages: Languages;
+    languages: Array<string>;
     borders: Array<string>;
     area: number;
     demonyms: Array<string>;
@@ -77,9 +77,16 @@ export interface CoatOfArms extends CountryBase
     svg: string;
 }
 
-export interface Languages extends CountryBase
+export interface Languages
 {
     spa: string;
     ber: string;
     bey: string;
+    por: string;
+}
+
+export interface Currency extends CountryBase
+{
+    currency: string;
+    symbol: string;
 }
