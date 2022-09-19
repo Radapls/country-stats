@@ -44,8 +44,7 @@ export class AppComponent implements OnInit
             data: countriesInfo,
             viewContainerRef: this.viewContainerRef,
             maxWidth: '800px',
-            maxHeight: '800px',
-            minWidth: '100px'
+            maxHeight: '800px'
         });
     }
 

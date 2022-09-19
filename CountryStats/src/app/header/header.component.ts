@@ -8,15 +8,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class HeaderComponent
 {
-    public selectMode!: boolean;
+    public selectMode: boolean = true;
 
-
-    public onChange(): boolean
+    public changeTheme()
     {
-        !this.selectMode;
-        return true
+        document.body.classList.toggle('dark-theme');
     }
-
-
 
 }
