@@ -1,9 +1,9 @@
-<div class="toolbar" fxLayout="row" fxLayoutAlign="space-around center">
-    <div class="search" fxLayout="column" fxLayoutAlign="start">
+<div class="toolbar" fxLayoutAlign="space-evenly" fxlayout="column wrap">
+    <div class="search" fxLayoutAlign="start">
         <input #search [(ngModel)]="searchContents">
     </div>
 
-    <div class="select" fxLayout="row">
+    <div class="select" fxLayout="row" fxLayoutAlign="end">
         <select value="filter">
             <option *ngFor="let region of regions"> {{ region }}</option>
         </select>
