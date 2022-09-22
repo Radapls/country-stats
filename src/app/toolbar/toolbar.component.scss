@@ -30,7 +30,7 @@ input
     width: 50%
 }
 
-select
+.mat-form-field
 {
     @include font-bold;
     @include font-style(16px, $White, 36px);
@@ -44,6 +44,31 @@ select
     box-shadow: 3px 2px 10px 1px $Very-Dark-Blue;
     width: 40%
 }
+
+.mat-select-panel {
+    background: rgba(255, 0, 0, 0.5);
+  }
+
+.mat-select-placeholder
+{
+    transition: none;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: $White !important;
+   }
+
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: none !important;
+  }
+
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: none !important;
+  }
+
 
 select.mat-input-element:not(:disabled) {
     cursor: pointer;
