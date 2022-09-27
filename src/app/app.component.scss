@@ -1,46 +1,14 @@
-@import './src/styles/colors.scss';
 @import './src/styles/fonts.scss';
 @import './src/styles/breakpoints.scss';
 
 p
 {
     @include font-bold;
-    @include font-style(40px, $White, 24px);
-}
-
-footer
-{
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-}
-
-.container
-{
-background-color: $Dark-Blue
-}
-
-.toolbar
-{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    @include font-style(40px, --text, 24px);
 }
 
 .grid
 {
     display: grid;
     grid-template-columns: repeat(4,1fr);
-}
-
-.mat-paginator, .mat-paginator-page-size, .mat-select-trigger, .mat-select, .mat-option-text, .mat-select-panel {
-    color: $White;
-    background: $Dark-Blue;
-    box-shadow: 3px 2px 10px 1px $Very-Dark-Blue;
-    @include font-medium;
-    @include font-style(12px, $White, 12px);
-}
-
-.mat-form-field {
-    @include font-medium;
-    @include font-style(12px, $White, 12px);
 }

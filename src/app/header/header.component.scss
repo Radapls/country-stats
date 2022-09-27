@@ -1,26 +1,23 @@
-@import '/src/styles/colors.scss';
 @import '/src/styles/fonts.scss';
-@import '/src/styles/icons.scss';
 
 header
 {
 @include font-bold;
-@include font-style(16px, $White, 36px);
+@include font-style(16px, --text, 36px);
 height: 80px;
 padding: .5rem;
-background-color: $Blue;
-border-bottom: solid 1px $Blue;
+background-color: var(--primary);
+border-bottom: solid 1px var(--primary);
 top: 0;
 position: fixed;
 width: 100%;
-box-shadow: 3px 2px 10px 1px $Very-Dark-Blue;
+box-shadow: 3px 2px 10px 1px var(--body);
 }
-
 
 h1
 {
     @include font-bold;
-    @include font-style(20px, $White, 16px);
+    @include font-style(20px, --text, 16px);
     margin-left: 10px;
 }
 

@@ -1,9 +1,8 @@
-@import './src/styles/colors.scss';
 @import './src/styles/fonts.scss';
 
 ::ng-deep.mat-snack-bar-container
 {
-    color: $White;
+    color: --primary;
     background: transparent;
     box-shadow:none;
 }
@@ -27,22 +26,22 @@
         color: $lblColor;
         &:active
         {
-            background-color: $Very-Light-Gray;
+            background-color: --body;
         }
     }
 }
 
 .default
 {
-    @include base(rgba($White, .7), $Dark-Blue, $Dark-Gray);
+    @include base(--primary, --body, --text);
 }
 
 .success
 {
-    @include base($White, $Dark-Blue, $White);
+    @include base(--primary, --body, --primary);
 }
 
 .warning
 {
-    @include base($White, $Dark-Blue, $White);
+    @include base(--primary, --body, --primary);
 }

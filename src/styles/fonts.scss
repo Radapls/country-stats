@@ -44,6 +44,6 @@ $font-family: 'Montserrat';
 @mixin font-style($size, $color, $line)
 {
     font-size: $size;
-    color: $color;
+    color: var($color);
     line-height: $line;
 }

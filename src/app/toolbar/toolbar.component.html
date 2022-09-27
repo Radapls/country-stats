@@ -1,15 +1,14 @@
 <div class="toolbar" fxLayoutAlign="space-evenly" fxlayout="column wrap">
     <div fxLayout="row" fxFlexAlign="center" class="search">
         <input placeholder="Type a country" type="text" [(ngModel)]="searchContents">
-        <img src="/assets/icons/search.svg" draggable="false">
     </div>
 
     <div class="search" fxLayoutAlign="start">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" name="regions" r>
             <mat-label>Select region</mat-label>
-            <mat-select>
+            <mat-select [formControl]="nameControl">
                 <mat-option>None</mat-option>
-                <mat-option *ngFor="let region of regions">{{region}}</mat-option>
+                <mat-option *ngFor="let region of regions" [value]="regions">{{ region }}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
