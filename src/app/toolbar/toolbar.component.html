@@ -1,6 +1,7 @@
 <div class="toolbar" fxLayoutAlign="space-evenly" fxlayout="column wrap">
-    <div class="search" fxLayoutAlign="start">
-        <input #search [(ngModel)]="searchContents">
+    <div fxLayout="row" fxFlexAlign="center" class="search">
+        <input placeholder="Type a country" type="text" [(ngModel)]="searchContents">
+        <img src="/assets/icons/search.svg" draggable="false">
     </div>
 
     <div class="search" fxLayoutAlign="start">

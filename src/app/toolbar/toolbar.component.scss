@@ -1,16 +1,19 @@
 @import './src/styles/colors.scss';
 @import './src/styles/fonts.scss';
 
-.toolbar
+img
 {
-    margin-top: 80px
+    cursor: pointer;
+    position: absolute;
 }
 
 .toolbar
 {
+    margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
 }
+
 .search, .select
 {
     width: 100%
@@ -69,10 +72,14 @@ input
    background-color: none !important;
   }
 
-
 select.mat-input-element:not(:disabled) {
     cursor: pointer;
     color: $White;
     background-color: $Dark-Blue;
     caret-color: none;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius: 4px 4px 0 0;
+    padding: 0;
 }

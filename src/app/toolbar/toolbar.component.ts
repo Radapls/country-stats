@@ -73,11 +73,6 @@ export class ToolbarComponent implements OnInit, OnDestroy
         );
     }
 
-    // public filterCountries(): Name[]
-    // {
-    //     return this.countries?.map<Name>(res => res.name.filter(res => res.co));
-    // }
-
     public ngOnInit(): void
     {
         this.sub.add(this.countries$.subscribe((value) =>
