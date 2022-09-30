@@ -4,8 +4,8 @@
 
 
     <button (click)="changeTheme()" class="btn">
-        <mat-icon #DarkMode aria-hidden="false" fontIcon="dark_mode"></mat-icon>
-        <mat-icon #LightMode aria-hidden="false" fontIcon="light_mode"></mat-icon>
+        <mat-icon *ngIf="selectMode" aria-hidden="false" fontIcon="dark_mode"></mat-icon>
+        <mat-icon *ngIf="!selectMode" aria-hidden="false" fontIcon="light_mode"></mat-icon>
     </button>
 
 </header>

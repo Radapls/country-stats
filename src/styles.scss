@@ -1,15 +1,15 @@
-:root .ligth-theme {
-    --primary:  hsl(0, 0%, 52%);
-    --body: hsl(0, 0%, 98%);
-    --text: hsl(200, 15%, 8%);
+:root {
+    --primary:  hsl(0, 0%, 52%); // ligth Mode Input
+    --body: hsl(0, 0%, 98%); // Light Mode Background
+    --text: hsl(200, 15%, 8%); // Light Mode text
     }
 
 
 :root .dark-theme
     {
-    --primary:  hsl(207, 26%, 17%);
-    --body: hsl(200, 15%, 8%);
-    --text:  hsl(0, 0%, 100%);
+    --primary:  hsl(209, 23%, 22%); // Dark Mode Elements
+    --body: hsl(207, 26%, 17%); // Dark Mode Backgroud
+    --text:  hsl(0, 0%, 100%); // Dark Mode text & Light mode elements
     }
 
 
