@@ -13,7 +13,38 @@
     }
 
 
-html, body {
-     height: 100%;
-     margin: 0;
-     background-color: var(--body);}
+html, body
+{
+    width: 100%;
+    margin: 0;
+    background-color: var(--body);
+
+        body:before
+    {
+        position: absolute;
+        height: fit-content;
+        background-color: var(--body);
+    }
+
+    @mixin mobile
+{
+    @media screen and (max-width: #{$Mobile})
+    {
+        @content;
+    }
+}
+
+@mixin desktop
+{
+    @media screen and (max-width: #{$Desktop})
+    {
+        @content;
+    }
+}
+
+
+
+}
+
+$Mobile: 375px;
+$Desktop: 1440px;

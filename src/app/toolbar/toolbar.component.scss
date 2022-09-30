@@ -39,7 +39,7 @@ input, .text
 .mat-form-field
 {
     @include font-bold;
-    @include font-style(16px, --body, 36px);
+    @include font-style(16px, --text, 36px);
     margin:20px 170px;
 	padding: 10px;
 	border: none;
@@ -65,9 +65,14 @@ input, .text
    background-color: var(--text) !important;
   }
 
-::ng-deep.mat-select-value .mat-form-field-wrapper {
-    color: none !important;
-    border-color: none !important;
+  ::ng-deep.mat-select-value
+  {
+    color: var(--text) !important;
+  }
+
+::ng-deep.mat-form-field-wrapper {
+
+    border-color: transparent !important;
 }
 ::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex {
     border-radius: 4px 4px 0 0 !important;
@@ -78,10 +83,14 @@ input, .text
 ::ng-deep.mat-form-field-infix
 {
     padding: 0 !important;
-    color: none !important;
-    border-color: none !important;
+    color: transparent !important;
+    border-color: transparent !important;
 }
 
 ::ng-deep.mat-form-field-appearance-fill .mat-form-field-infix {
     padding: 0 !important;
+}
+
+::ng-deep.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: var(--primary);
 }
