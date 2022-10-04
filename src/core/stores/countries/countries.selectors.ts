@@ -4,16 +4,16 @@ import { CountriesStore } from './countries.store';
 const getCountryState = createFeatureSelector<CountriesStore>('countries');
 
 export const getCountriesLoading = createSelector(
-    getCountryState,
-    (store: CountriesStore) => store.loading
+  getCountryState,
+  (store: CountriesStore) => store.loading
 );
 
 export const getCountries = createSelector(
-    getCountryState,
-    (store: CountriesStore) => store.countries
+  getCountryState,
+  (store: CountriesStore) => store.countries
 );
 
 export const getName = createSelector(
-    getCountryState,
-    (store: CountriesStore) => store.searchName
+  getCountryState,
+  (store: CountriesStore) => store.countries
 );

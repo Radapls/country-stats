@@ -5,9 +5,8 @@ export const storeTag: string = '[Countries Store]';
 
 export interface CountriesStore
 {
-    loading: boolean;
-    countries: Array<Countries>;
-    searchName: Array<Countries>;
-    error: ErrorPayload;
+  loading: boolean;
+  countries: Array<Countries>;
+  error: ErrorPayload;
 
 }
