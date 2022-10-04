@@ -14,6 +14,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
 import { LoadingComponent } from './loading/loading.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { PageComponent } from './page/page.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -21,7 +22,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         CardComponent,
         ToolbarComponent,
         DialogComponent,
-        LoadingComponent
+        LoadingComponent,
+        PageComponent
     ],
     imports: [
         BrowserModule,
