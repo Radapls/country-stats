@@ -1,11 +1,13 @@
 <header fxLayout="row" fxLayoutAlign="space-between center">
-    <img src="/assets/images/earth-icon.png" alt="" width="45px">
-    <h1>Where in the world?</h1>
+  <img src="/assets/images/earth-icon.png" alt="" width="45px">
+  <h1>Where in the world?</h1>
 
 
-    <button (click)="changeTheme()" class="btn">
-        <mat-icon *ngIf="selectMode" aria-hidden="false" fontIcon="dark_mode"></mat-icon>
-        <mat-icon *ngIf="!selectMode" aria-hidden="false" fontIcon="light_mode"></mat-icon>
-    </button>
+  <button (click)="changeTheme()" class="btn">
+    <mat-icon *ngIf="!selectMode" aria-hidden="false" fontIcon="dark_mode" [ngStyle]="{'color':'var(--text)'}">
+    </mat-icon>
+    <mat-icon *ngIf="selectMode" aria-hidden="true" fontIcon="light_mode" [ngStyle]="{'color':'var(--text)'}">
+    </mat-icon>
+  </button>
 
 </header>
