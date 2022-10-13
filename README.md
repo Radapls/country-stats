@@ -4,10 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Built with
 
-- Semantic HTML5 markup
 - [Sass](https://sass-lang.com/)
 - [FxLayout](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
-- Mobile-first workflow
 - [Angular CLI](https://github.com/angular/angular-cli) - Angular framework
 - [Angular Material](https://material.angular.io/) - For components
 
