@@ -1,10 +1,10 @@
-mat-spinner
+::ng-deep.mat-spinner
 {
     display: inline-block !important;
 
     &.mat-spinner circle
     {
-        stroke: red !important;
+        stroke: var(--primary) !important;
     }
 }
 

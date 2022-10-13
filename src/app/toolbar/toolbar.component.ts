@@ -31,7 +31,6 @@ export class ToolbarComponent implements OnInit, OnDestroy
     public filteredNames: Observable<Array<Countries>>;
 
     public sub: Subscription = new Subscription();
-    public countriesControl = new FormControl('');
 
     public names!: Array<Name>;
 

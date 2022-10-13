@@ -1,16 +1,12 @@
-<div class="toolbar" fxLayoutAlign="space-evenly" fxlayout="column wrap">
+<div class="toolbar" fxLayoutAlign="center" fxlayout="column wrap">
     <div fxLayout="row" fxFlexAlign="center">
         <input placeholder="Type a country" type="text" [(ngModel)]="searchContents">
     </div>
 
-    <div fxLayoutAlign="start">
-        <mat-form-field appearance="fill" name="regions" r>
-            <mat-label>Select region</mat-label>
-            <mat-select [formControl]="nameControl">
-                <mat-option>None</mat-option>
-                <mat-option *ngFor="let region of regions" [value]="regions">{{ region }}</mat-option>
-            </mat-select>
-        </mat-form-field>
+    <div fxLayout="row" fxFlexAlign="center">
+      <select name="regions">
+        <option *ngFor="let region of regions" [value]="regions">{{ region }}</option>
+      </select>
     </div>
 
 </div>
