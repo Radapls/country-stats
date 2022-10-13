@@ -21,6 +21,8 @@ export const loadCountriesError = createAction(
   }>()
 );
 
+// Filter search by name
+
 export const reloadName = createAction(
   `${storeTag} Load Name of Country`,
   props<{
@@ -38,12 +40,42 @@ export const loadName = createAction(
 export const loadNameSuccess = createAction(
   `${storeTag} Load Name of Country Success`,
   props<{
-    countries: Array<Countries>;
+    countryByName: Array<Countries>;
   }>()
 );
 
 export const loadNameError = createAction(
   `${storeTag} Load Name of Country Error`,
+  props<{
+    error: ErrorPayload;
+  }>()
+);
+
+// Filter region actions
+
+export const reloadRegion = createAction(
+  `${storeTag} Reload Regions`,
+  props<{
+    regionName: string;
+  }>()
+);
+
+export const loadRegion = createAction(
+  `${storeTag} Load Regions`,
+  props<{
+    regionName: string;
+  }>()
+);
+
+export const loadRegionSuccess = createAction(
+  `${storeTag} Load Regions Success`,
+  props<{
+    countriesByRegion: Array<Countries>;
+  }>()
+);
+
+export const loadRegionError = createAction(
+  `${storeTag} Load Regions Error`,
   props<{
     error: ErrorPayload;
   }>()

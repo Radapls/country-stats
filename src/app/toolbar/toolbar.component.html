@@ -4,8 +4,8 @@
     </div>
 
     <div fxLayout="row" fxFlexAlign="center">
-      <select name="regions">
-        <option *ngFor="let region of regions" [value]="regions">{{ region }}</option>
+      <select name="filter" [(ngModel)]="filterRegion" (ngModelChange)="emitFilterRegions()" *ngFor="let region of regions">
+        <option [value]="regions">{{ region }}</option>
       </select>
     </div>
 

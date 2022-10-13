@@ -18,12 +18,11 @@ export class CountriesService
 
     public getCountryName(name: string): Observable<Array<Countries>>
     {
-        return this.http.get<Array<Countries>>(api.name(name
-        ));
+        return this.http.get<Array<Countries>>(api.name(name));
     }
 
-    // public getCountryCode(code: string): Observable<any>
-    // {
-    //     return this.http.get(api.name(code));
-    // }
+    public getRegions(region: string): Observable<Array<Countries>>
+    {
+        return this.http.get<Array<Countries>>(api.region(region));
+    }
 }

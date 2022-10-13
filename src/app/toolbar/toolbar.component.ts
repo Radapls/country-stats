@@ -1,93 +1,116 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, map, Observable, startWith, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
-import { Countries, Name } from 'src/core/services/models/country.model';
+import { Countries, Regions } from 'src/core/services/models/country.model';
 
 @Component({
-    selector: 'app-toolbar',
-    templateUrl: './toolbar.component.html',
-    styleUrls: [ './toolbar.component.scss' ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-toolbar',
+  templateUrl: './toolbar.component.html',
+  styleUrls: [ './toolbar.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarComponent implements OnInit, OnDestroy
 {
-    private searchEvent: EventEmitter<string> = new EventEmitter();
+  private searchEvent: EventEmitter<string> = new EventEmitter();
 
-    @Input()
-    public debounceTime: number = 1000;
+  @Input()
+  public debounceTime: number = 1000;
 
-    @Output()
-    public search: Observable<string> = this.searchEvent.pipe(
-        debounceTime(this.debounceTime)
+  @Output()
+  public search: Observable<string> = this.searchEvent.pipe(debounceTime(this.debounceTime)
+  );
+
+  @Output()
+  public refresh: EventEmitter<Event> = new EventEmitter();
+
+  @Output()
+  public filter: EventEmitter<Regions> = new EventEmitter();
+
+  public sub: Subscription = new Subscription();
+  public control: FormGroup = new FormGroup({
+    search: new FormControl(''),
+    filter: new FormControl(''),
+  });
+
+
+
+  public filteredRegions$: Observable<Array<Countries>> = this.api.getRegions$;
+  public filteredRegion!: string;
+  public regions!: Regions
+
+  public countries$: Observable<Array<Countries>> = this.api.getCountries$
+  public countries!: Array<Countries>;
+
+  public filteredNames$: Observable<Array<Countries>> = this.api.getName$;
+  public searchContentsValue!: string;
+  public isRefresh!: boolean;
+
+  constructor(
+    private readonly api: CountriesApi
+  )
+  {
+    this.filteredNames$ = this.control.valueChanges.pipe(
+      startWith(''),
+      map(country => (country ? this._filterCountry(country) : this.countries.slice())),
     );
+  }
 
-    @Output()
-    public refresh: EventEmitter<Event> = new EventEmitter();
+  public get searchContents(): string
+  {
+    return this.searchContentsValue;
+  }
 
-    public regions: Array<string> = [ 'Africa', 'America', 'Asia', 'Europe', 'Oceania' ]
+  public get filterRegion(): Regions
+  {
+    return this.regions;
+  }
 
-    public nameControl = new FormControl('');
-    public filteredNames: Observable<Array<Countries>>;
-
-    public sub: Subscription = new Subscription();
-
-    public names!: Array<Name>;
-
-    public countries$: Observable<Array<Countries>> = this.api.getCountries$
-    public countries!: Array<Countries>;
-
-    public searchContentsValue!: string;
-    public isRefresh!: boolean;
-
-    public get searchContents(): string
+  public set searchContents(search: string)
+  {
+    this.searchContentsValue = search;
+    if (!this.isRefresh)
     {
-        return this.searchContentsValue;
+      this.searchEvent.emit(search);
     }
+    this.isRefresh = false;
+  }
 
-    public set searchContents(search: string)
+  public set filterRegion(regionSelected: Regions)
+  {
+    this.regions = regionSelected;
+  }
+
+  public emitFilterRegions(): void
+  {
+    if (!!this.regions)
     {
-        this.searchContentsValue = search;
-        if (!this.isRefresh)
-        {
-            this.searchEvent.emit(search);
-        }
-        this.isRefresh = false;
+      this.filter.emit(this.regions);
     }
+  }
 
-    public onRefresh(): void
-    {
-        this.isRefresh = true;
-        this.searchContents = '';
-        this.refresh.emit();
-    }
+  public onRefresh(): void
+  {
+    this.isRefresh = true;
+    this.searchContents = '';
+    this.refresh.emit();
+  }
 
-    constructor(
-        private readonly api: CountriesApi
-    )
-    {
-        this.filteredNames = this.nameControl.valueChanges.pipe(
-            startWith('all'),
-            map(country => (country ? this._filterCountry(country) : this.countries.slice())),
-        );
-    }
+  public ngOnInit(): void
+  {
+    this.sub.add(this.countries$.subscribe((value) =>
+      this.countries = value))
+  };
 
-    public ngOnInit(): void
-    {
-        this.sub.add(this.countries$.subscribe((value) =>
-            this.countries = value))
-    };
+  public ngOnDestroy(): void
+  {
+    this.sub.unsubscribe()
+  }
 
-    public ngOnDestroy(): void
-    {
-        this.sub.unsubscribe()
-    }
+  private _filterCountry(value: string): Countries[]
+  {
+    const filterValue = value;
 
-    private _filterCountry(value: string): Countries[]
-    {
-        const filterValue = value;
-
-        return this.countries?.map<Countries>(res => res);
-    }
-
+    return this.countries?.map<Countries>(res => res);
+  }
 }
