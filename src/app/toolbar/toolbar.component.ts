@@ -15,7 +15,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
     private searchEvent: EventEmitter<string> = new EventEmitter();
 
     @Input()
-    public debounceTime: number = 2000;
+    public debounceTime: number = 1000;
 
     @Output()
     public search: Observable<string> = this.searchEvent.pipe(
@@ -25,7 +25,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
     @Output()
     public refresh: EventEmitter<Event> = new EventEmitter();
 
-    public regions: Array<string> = [ 'Africa', 'America', 'Asia', 'Europa', 'Oceania' ]
+    public regions: Array<string> = [ 'Africa', 'America', 'Asia', 'Europe', 'Oceania' ]
 
     public nameControl = new FormControl('');
     public filteredNames: Observable<Array<Countries>>;
@@ -62,13 +62,12 @@ export class ToolbarComponent implements OnInit, OnDestroy
         this.refresh.emit();
     }
 
-
     constructor(
         private readonly api: CountriesApi
     )
     {
         this.filteredNames = this.nameControl.valueChanges.pipe(
-            startWith(''),
+            startWith('all'),
             map(country => (country ? this._filterCountry(country) : this.countries.slice())),
         );
     }

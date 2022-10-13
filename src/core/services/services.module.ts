@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { SnackBarService } from 'src/shared/snack-bar/snack-bar.service';
 import { CountriesService } from './countries.service';
 import { ErrorHandlingService } from './error-handling.service';
-import { ThemeService } from './theme.service';
 
 @NgModule({
     imports: [
@@ -12,7 +11,6 @@ import { ThemeService } from './theme.service';
     providers: [
         CountriesService,
         ErrorHandlingService,
-        ThemeService,
         SnackBarService
     ]
 })
