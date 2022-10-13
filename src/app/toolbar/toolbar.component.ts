@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, map, Observable, startWith, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
@@ -9,7 +9,8 @@ import { SelectModel } from 'src/core/services/models/select.model';
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: [ './toolbar.component.scss' ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ToolbarComponent implements OnInit, OnDestroy
 {

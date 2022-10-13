@@ -1,9 +1,20 @@
 @import './src/styles/fonts.scss';
 
-.mat-dialog-content
+::ng-deep.mat-dialog-content
 {
     align-content: center;
-    padding: 40px 80px 40px 80px
+    padding: 40px 80px 40px 80px;
+    background-color: var(--body) !important;
+}
+
+::ng-deep.mat-dialog-container
+{
+  background-color: var(--body) !important;
+}
+
+.mat-icon
+{
+  color: var(--primary);
 }
 
 h1
@@ -27,6 +38,6 @@ h3
 p
 {
 @include font-ExtraBold;
-@include font-style(14px, --text, 12px);
+@include font-style(14px, --text, 14px);
 margin: 8px;
 }

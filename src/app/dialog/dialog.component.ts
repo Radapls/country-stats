@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries } from 'src/core/services/models/country.model';
@@ -8,7 +8,8 @@ import { WUI_DIALOG_DATA } from 'src/core/services/models/dialog.model';
     selector: 'app-dialog',
     templateUrl: './dialog.component.html',
     styleUrls: [ './dialog.component.scss' ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.Emulated
 })
 export class DialogComponent implements OnInit, OnDestroy
 {

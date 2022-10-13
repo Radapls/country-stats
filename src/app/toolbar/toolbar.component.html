@@ -3,10 +3,10 @@
         <input placeholder="Type a country" type="text" [(ngModel)]="searchContents">
     </div>
 
-    <div fxLayout="row" fxFlexAlign="center">
-      <mat-form-field appearance="fill" name="regions">
+    <div fxLayout="row" fxFlexAlign="center" >
+      <mat-form-field appearance="fill" name="regions" class="select">
         <mat-label>Select region</mat-label>
-        <mat-select class="select">
+        <mat-select >
             <mat-option>None</mat-option>
             <mat-option *ngFor="let region of itemRegions" [value]="itemRegions.values">{{ region.key }}</mat-option>
         </mat-select>
