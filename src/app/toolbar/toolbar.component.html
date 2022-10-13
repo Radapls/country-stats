@@ -4,9 +4,13 @@
     </div>
 
     <div fxLayout="row" fxFlexAlign="center">
-      <select name="filter" [(ngModel)]="filterRegion" (ngModelChange)="emitFilterRegions()" *ngFor="let region of regions">
-        <option [value]="regions">{{ region }}</option>
-      </select>
+      <mat-form-field appearance="fill" name="regions">
+        <mat-label>Select region</mat-label>
+        <mat-select class="select">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let region of itemRegions" [value]="itemRegions.values">{{ region.key }}</mat-option>
+        </mat-select>
+    </mat-form-field>
     </div>
 
 </div>

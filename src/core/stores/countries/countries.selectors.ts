@@ -15,10 +15,10 @@ export const getCountries = createSelector(
 
 export const getName = createSelector(
   getCountryState,
-  (store: CountriesStore) => store.countriesByName
+  (store: CountriesStore) => store.countries
 );
 
 export const getRegions = createSelector(
   getCountryState,
-  (store: CountriesStore) => store.countriesByRegion
+  (store: CountriesStore) => store.countries
 );

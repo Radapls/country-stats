@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, map, Observable, startWith, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries, Regions } from 'src/core/services/models/country.model';
+import { SelectModel } from 'src/core/services/models/select.model';
 
 @Component({
   selector: 'app-toolbar',
@@ -25,7 +26,7 @@ export class ToolbarComponent implements OnInit, OnDestroy
   public refresh: EventEmitter<Event> = new EventEmitter();
 
   @Output()
-  public filter: EventEmitter<Regions> = new EventEmitter();
+  public filter: EventEmitter<string> = new EventEmitter();
 
   public sub: Subscription = new Subscription();
   public control: FormGroup = new FormGroup({
@@ -33,11 +34,32 @@ export class ToolbarComponent implements OnInit, OnDestroy
     filter: new FormControl(''),
   });
 
-
-
   public filteredRegions$: Observable<Array<Countries>> = this.api.getRegions$;
   public filteredRegion!: string;
   public regions!: Regions
+
+  public itemRegions: Array<SelectModel<string, Regions>> = [
+    {
+      key: 'Africa',
+      value: Regions.africa
+    },
+    {
+      key: 'America',
+      value: Regions.america
+    },
+    {
+      key: 'Europe',
+      value: Regions.europe
+    },
+    {
+      key: 'Asia',
+      value: Regions.asia
+    },
+    {
+      key: 'Oceania',
+      value: Regions.oceania
+    }
+  ];
 
   public countries$: Observable<Array<Countries>> = this.api.getCountries$
   public countries!: Array<Countries>;
@@ -79,15 +101,10 @@ export class ToolbarComponent implements OnInit, OnDestroy
   public set filterRegion(regionSelected: Regions)
   {
     this.regions = regionSelected;
+    console.log(regionSelected)
+    this.filter.emit(regionSelected);
   }
 
-  public emitFilterRegions(): void
-  {
-    if (!!this.regions)
-    {
-      this.filter.emit(this.regions);
-    }
-  }
 
   public onRefresh(): void
   {

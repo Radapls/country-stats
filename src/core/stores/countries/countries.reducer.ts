@@ -34,7 +34,7 @@ const reducer: ActionReducer<Partial<CountriesStore>, Action> = createReducer(
   })),
   on(loadNameSuccess, (state, action) => ({
     ...state,
-    countryByName: action.countryByName,
+    countries: action.countries,
     loading: false
   })),
   on(loadNameError, (state, action) => ({
@@ -53,7 +53,7 @@ const reducer: ActionReducer<Partial<CountriesStore>, Action> = createReducer(
   })),
   on(loadRegionSuccess, (state, action) => ({
     ...state,
-    countriesByRegion: action.countriesByRegion,
+    countries: action.countries,
     loading: false
   })),
   on(loadRegionError, (state, action) => ({

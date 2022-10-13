@@ -25,7 +25,7 @@ export class CountriesEffect
         action.searchName
       )),
     map((response) => loadNameSuccess({
-      countryByName: response
+      countries: response
     })),
     this.errorHandlingService.catchError(loadNameError)
   ));
@@ -37,7 +37,7 @@ export class CountriesEffect
         action.regionName
       )),
     map((response) => loadRegionSuccess({
-      countriesByRegion: response
+      countries: response
     })),
     this.errorHandlingService.catchError(loadRegionError)
   ));

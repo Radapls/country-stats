@@ -40,7 +40,7 @@ export const loadName = createAction(
 export const loadNameSuccess = createAction(
   `${storeTag} Load Name of Country Success`,
   props<{
-    countryByName: Array<Countries>;
+    countries: Array<Countries>;
   }>()
 );
 
@@ -70,7 +70,7 @@ export const loadRegion = createAction(
 export const loadRegionSuccess = createAction(
   `${storeTag} Load Regions Success`,
   props<{
-    countriesByRegion: Array<Countries>;
+    countries: Array<Countries>;
   }>()
 );
 

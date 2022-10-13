@@ -7,8 +7,6 @@ export interface CountriesStore
 {
   loading: boolean;
   countries: Array<Countries>;
-  countriesByName: Array<Countries>;
-  countriesByRegion: Array<Countries>;
   error: ErrorPayload;
 
 }

@@ -60,4 +60,13 @@ export class AppComponent implements OnInit, OnDestroy
     of(this.countries = this.searchResults).pipe(
       delay(2000))
   }
+
+  public onRegionFilter(region: string)
+  {
+    this.search = region;
+    this.api.loadRegions(region);
+
+    of(this.countries = this.searchResults).pipe(
+      delay(2000))
+  }
 }
