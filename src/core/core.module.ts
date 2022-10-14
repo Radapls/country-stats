@@ -6,13 +6,13 @@ import { ServicesModule } from './services/services.module';
 import { StoreModule } from './stores/store.module';
 
 @NgModule({
-    imports: [
-        ServicesModule,
-        StoreModule,
-        ApiModule,
-        EffectsModule,
-        ResolversModule
-    ]
+  imports: [
+    ServicesModule,
+    StoreModule,
+    ApiModule,
+    EffectsModule,
+    ResolversModule
+  ]
 })
 export class CoreModule
 { }

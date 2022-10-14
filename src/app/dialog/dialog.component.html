@@ -9,7 +9,7 @@
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontIcon="verified" color="primary">
                 </mat-icon>
-                <p>{{ data.name.official }}</p>
+                <p>{{ data.name.nativeName | nativeName }}</p>
             </span>
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontIcon="groups"></mat-icon>
@@ -29,16 +29,25 @@
             </span>
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontIcon="domain"></mat-icon>
-                <p></p>
+                <p>{{ data.tld}}</p>
             </span>
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontIcon="attach_money"></mat-icon>
-                <p>{{ data.currencies.currency }}</p>
+                <p>{{ data.currencies | detail }}</p>
             </span>
             <span fxLayout="row" fxFlexAlign="center center">
                 <mat-icon aria-hidden="false" fontIcon="language"></mat-icon>
-                <p>{{ data.languages.entries }}</p>
+                <p>{{ data.languages | lang }}</p>
             </span>
+
+            <div *ngIf="data.borders" class="bc">
+              <span>Border Countries </span>
+              <ul  class="flex">
+                  <li *ngFor="let i of data.borders">
+                      <a class="btn" [routerLink]="['../../detail', i]">{{i}}</a>
+                  </li>
+              </ul>
+          </div>
         </div>
 
     </div>

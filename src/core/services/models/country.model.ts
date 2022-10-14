@@ -4,7 +4,7 @@ export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<C
 export interface CountryBase
 {
   name: Name;
-  tdl: Array<string>;
+  tld: Array<string>;
   cca2: string;
   cnn3: string;
   cca3: string;
