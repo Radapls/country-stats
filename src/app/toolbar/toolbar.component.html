@@ -6,11 +6,15 @@
     <div fxLayout="row" fxFlexAlign="center" >
       <mat-form-field appearance="fill" name="regions" class="select">
         <mat-label>Select region</mat-label>
-        <mat-select >
+        <mat-select>
             <mat-option>None</mat-option>
-            <mat-option *ngFor="let region of itemRegions" [value]="itemRegions.values">{{ region.key }}</mat-option>
+            <mat-option
+              *ngFor="let region of itemRegions"
+              [value]="itemRegions"
+              (click)="getRegion(region)">
+              {{ region }}
+            </mat-option>
         </mat-select>
     </mat-form-field>
     </div>
-
 </div>

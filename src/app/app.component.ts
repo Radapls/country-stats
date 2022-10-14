@@ -65,8 +65,5 @@ export class AppComponent implements OnInit, OnDestroy
   {
     this.search = region;
     this.api.loadRegions(region);
-
-    of(this.countries = this.searchResults).pipe(
-      delay(2000))
   }
 }

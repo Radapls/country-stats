@@ -4,13 +4,23 @@
   <app-header></app-header>
 
   <div>
-    <app-toolbar (search)="onNameFilter($event)"></app-toolbar>
+    <app-toolbar
+      (search)="onNameFilter($event)"
+      (filter)="onRegionFilter($event)">
+    </app-toolbar>
   </div>
 
   <div class="grid" fxLayout="row wrap" fxLayoutAlign="center" fxlayout="column wrap">
-    <app-card *ngFor="let country of countries" [flag]="country.flags.png" [name]="country.name.common"
-      [population]="country.population" [region]="country.region" [capital]="country.capital" mat-button
-      (click)="openDialog(country)" draggable="false">
+    <app-card
+      mat-button
+      draggable="false"
+      *ngFor="let country of countries"
+      [flag]="country.flags.png"
+      [name]="country.name.common"
+      [population]="country.population"
+      [region]="country.region"
+      [capital]="country.capital"
+      (click)="openDialog(country)">
     </app-card>
   </div>
 

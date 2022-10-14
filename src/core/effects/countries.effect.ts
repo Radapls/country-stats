@@ -33,7 +33,7 @@ export class CountriesEffect
   public getRegions$ = createEffect(() => this.actions$.pipe(
     ofType(loadRegion, reloadRegion),
     switchMap((action) =>
-      this.countriesService.getCountryName(
+      this.countriesService.getRegions(
         action.regionName
       )),
     map((response) => loadRegionSuccess({

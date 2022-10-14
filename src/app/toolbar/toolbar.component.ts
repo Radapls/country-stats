@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { debounceTime, map, Observable, startWith, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries, Regions } from 'src/core/services/models/country.model';
-import { SelectModel } from 'src/core/services/models/select.model';
 
 @Component({
   selector: 'app-toolbar',
@@ -39,28 +38,15 @@ export class ToolbarComponent implements OnInit, OnDestroy
   public filteredRegion!: string;
   public regions!: Regions
 
-  public itemRegions: Array<SelectModel<string, Regions>> = [
-    {
-      key: 'Africa',
-      value: Regions.africa
-    },
-    {
-      key: 'America',
-      value: Regions.america
-    },
-    {
-      key: 'Europe',
-      value: Regions.europe
-    },
-    {
-      key: 'Asia',
-      value: Regions.asia
-    },
-    {
-      key: 'Oceania',
-      value: Regions.oceania
-    }
-  ];
+  public itemRegions: Array<string> =
+    [
+      'Africa',
+      'America',
+      'Europe',
+      'Asia',
+      'Oceania',
+    ];
+
 
   public countries$: Observable<Array<Countries>> = this.api.getCountries$
   public countries!: Array<Countries>;
@@ -84,11 +70,6 @@ export class ToolbarComponent implements OnInit, OnDestroy
     return this.searchContentsValue;
   }
 
-  public get filterRegion(): Regions
-  {
-    return this.regions;
-  }
-
   public set searchContents(search: string)
   {
     this.searchContentsValue = search;
@@ -99,13 +80,10 @@ export class ToolbarComponent implements OnInit, OnDestroy
     this.isRefresh = false;
   }
 
-  public set filterRegion(regionSelected: Regions)
+  public getRegion(region: string): void
   {
-    this.regions = regionSelected;
-    console.log(regionSelected)
-    this.filter.emit(regionSelected);
+    this.filter.emit(region);
   }
-
 
   public onRefresh(): void
   {
