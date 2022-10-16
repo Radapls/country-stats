@@ -6,32 +6,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from 'src/core/core.module';
-import { DetailPipe } from 'src/pipes/details.pipe';
-import { FormatNumberPipe } from 'src/pipes/format-number.pipe.ts.pipe';
-import { LangPipe } from 'src/pipes/lang.pipe';
-import { NativeNamePipe } from 'src/pipes/native-name.pipe';
 import { SharedModule } from 'src/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { DialogComponent } from './dialog/dialog.component';
+import { DetailModule } from './details/details.module';
 import { HeaderComponent } from './header/header.component';
-import { LoadingComponent } from './loading/loading.component';
-import { DetailModule } from './pages/details/details.module';
-import { HomeModule } from './pages/home/home.module';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { HomeModule } from './home/home.module';
 @NgModule({
     declarations: [
         AppComponent,
-        HeaderComponent,
-        CardComponent,
-        ToolbarComponent,
-        DialogComponent,
-        LoadingComponent,
-        DetailPipe,
-        LangPipe,
-        NativeNamePipe,
-        FormatNumberPipe
+        HeaderComponent
     ],
     imports: [
         BrowserModule,

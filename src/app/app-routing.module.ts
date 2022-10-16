@@ -12,8 +12,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 // ];
 
 const routes: Routes = [
-  {path: '', loadChildren:() =>  import('../app/pages/home/home.module').then(m => m.HomeModule)},
-  {path: 'detail/:id', loadChildren: ()=> import('../app/pages/details/details.module').then(m => m.DetailModule)  }
+  {path: '', loadChildren:() =>  import('./home/home.module').then(m => m.HomeModule)},
+  {path: 'detail/:id', loadChildren: ()=> import('./details/details.module').then(m => m.DetailModule)  }
 ];
 
 @NgModule({
