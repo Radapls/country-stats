@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { delay, Observable, of, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries } from 'src/core/services/models/country.model';
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent } from './home/dialog/dialog.component';
 
 @Component({
   selector: 'app-root',

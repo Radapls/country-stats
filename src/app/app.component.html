@@ -1,27 +1,2 @@
 <app-loading *ngIf="(loading$ | async) === true"></app-loading>
-
-<div class="container" *ngIf="(loading$ | async) === false">
-  <app-header></app-header>
-
-  <div>
-    <app-toolbar
-      (search)="onNameFilter($event)"
-      (filter)="onRegionFilter($event)">
-    </app-toolbar>
-  </div>
-
-  <div class="grid" fxLayout="row wrap" fxLayoutAlign="center" fxlayout="column wrap">
-    <app-card
-      mat-button
-      draggable="false"
-      *ngFor="let country of countries"
-      [flag]="country.flags.png"
-      [name]="country.name.common"
-      [population]="country.population"
-      [region]="country.region"
-      [capital]="country.capital"
-      (click)="openDialog(country)">
-    </app-card>
-  </div>
-
-</div>
+<app-header></app-header>
