@@ -17,7 +17,8 @@ import { CardComponent } from './card/card.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
 import { LoadingComponent } from './loading/loading.component';
-import { PageComponent } from './page/page.component';
+import { DetailModule } from './pages/details/details.module';
+import { HomeModule } from './pages/home/home.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 @NgModule({
     declarations: [
@@ -27,7 +28,6 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         ToolbarComponent,
         DialogComponent,
         LoadingComponent,
-        PageComponent,
         DetailPipe,
         LangPipe,
         NativeNamePipe,
@@ -43,6 +43,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
         FlexLayoutModule,
         CoreModule,
         SharedModule,
+        HomeModule,
+        DetailModule,
         TranslateModule.forRoot()
     ],
     providers: [],
