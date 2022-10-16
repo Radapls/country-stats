@@ -6,16 +6,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from 'src/core/core.module';
-import { CardComponent } from 'src/shared/card/card.component';
-import { LoadingComponent } from 'src/shared/loading/loading.component';
+import { DetailPipe } from 'src/pipes/details.pipe';
+import { FormatNumberPipe } from 'src/pipes/format-number.pipe.ts.pipe';
+import { LangPipe } from 'src/pipes/lang.pipe';
+import { NativeNamePipe } from 'src/pipes/native-name.pipe';
 import { SharedModule } from 'src/shared/shared.module';
-import { ToolbarComponent } from 'src/shared/toolbar/toolbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DetailModule } from './details/details.module';
+import { CardComponent } from './card/card.component';
+import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
-import { DialogComponent } from './home/dialog/dialog.component';
-import { HomeModule } from './home/home.module';
+import { LoadingComponent } from './loading/loading.component';
+import { PageComponent } from './page/page.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -23,7 +26,12 @@ import { HomeModule } from './home/home.module';
         CardComponent,
         ToolbarComponent,
         DialogComponent,
-        LoadingComponent
+        LoadingComponent,
+        PageComponent,
+        DetailPipe,
+        LangPipe,
+        NativeNamePipe,
+        FormatNumberPipe
     ],
     imports: [
         BrowserModule,
@@ -35,8 +43,6 @@ import { HomeModule } from './home/home.module';
         FlexLayoutModule,
         CoreModule,
         SharedModule,
-        HomeModule,
-        DetailModule,
         TranslateModule.forRoot()
     ],
     providers: [],

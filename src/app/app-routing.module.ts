@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
-// const routes: Routes = [
-//     {
-//         path: '',
-//         component: AppComponent,
-//         resolve: {
-//             countriesResolver: CountriesResolver
-//         }
-//     }
-// ];
+import { RouterModule, Routes } from '@angular/router';
+import { CountriesResolver } from 'src/core/resolvers/countries.resolver';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  {path: '', loadChildren:() =>  import('./home/home.module').then(m => m.HomeModule)},
-  {path: 'detail/:id', loadChildren: ()=> import('./details/details.module').then(m => m.DetailModule)  }
+    {
+        path: '',
+        component: AppComponent,
+        resolve: {
+            countriesResolver: CountriesResolver
+        }
+    }
 ];
 
 @NgModule({
-    imports: [ RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules}) ],
+    imports: [ RouterModule.forRoot(routes) ],
     exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
