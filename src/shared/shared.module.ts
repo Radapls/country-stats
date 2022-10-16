@@ -10,10 +10,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule } from '@ngx-translate/core';
+import { LoadingModule } from './loading/loading.module';
 import { SnackBarModule } from './snack-bar/snack-bar.module';
+import { ToolbarModule } from './toolbar/toolbar.module';
 
 const sharedModules = [
     SnackBarModule,
+    LoadingModule,
+    ToolbarModule,
     MatProgressSpinnerModule,
     MatAutocompleteModule,
     MatPaginatorModule,

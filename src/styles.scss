@@ -1,3 +1,4 @@
+
 :root {
     --primary:  hsl(0, 0%, 52%); // ligth Mode Input
     --body: hsl(0, 0%, 98%); // Light Mode Background
@@ -15,9 +16,10 @@
 
 html, body
 {
-    width: 100%;
     margin: 0;
+    padding: 0;
     background-color: var(--body);
+    box-sizing: inherit;
 
         body:before
     {

@@ -51,3 +51,8 @@ a
   padding: 0.5em;
   border-radius:  0.5em;
 }
+
+mat-button, mat-dialog-close
+{
+  color: var(--text);
+}

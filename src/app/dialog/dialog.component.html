@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>{{ data.name.common }} </h1>
+<h1 mat-dialog-title>{{ data.name.common + data.flag }} </h1>
 <mat-dialog-content>
   <div fxLayout="row" fxLayoutAlign="start space-evenly" fxLayoutGap="20px">
 
@@ -48,9 +48,9 @@
 
       <div *ngIf="data.borders">
         <p>Border Countries </p>
-        <ul fxLayout="row" >
+        <ul fxLayout="row" fxlayout="column wrap">
           <div *ngFor="let borders of data.borders">
-            <a>{{borders}}</a>
+            <a >{{borders}}</a>
           </div>
         </ul>
       </div>

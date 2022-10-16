@@ -10,9 +10,8 @@
     </app-toolbar>
   </div>
 
-  <div class="grid" fxLayout="row wrap" fxLayoutAlign="center" fxlayout="column wrap">
+  <div class="grid" fxLayout="row wrap" fxLayoutAlign="center space-evenly" fxlayout="column wrap">
     <app-card
-      mat-button
       draggable="false"
       *ngFor="let country of countries"
       [flag]="country.flags.png"

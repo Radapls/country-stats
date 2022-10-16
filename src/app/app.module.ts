@@ -16,18 +16,12 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { HeaderComponent } from './header/header.component';
-import { LoadingComponent } from './loading/loading.component';
-import { PageComponent } from './page/page.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         CardComponent,
-        ToolbarComponent,
         DialogComponent,
-        LoadingComponent,
-        PageComponent,
         DetailPipe,
         LangPipe,
         NativeNamePipe,
