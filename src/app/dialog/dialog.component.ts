@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable, Subscription } from 'rxjs';
 import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries } from 'src/core/services/models/country.model';
@@ -21,7 +22,9 @@ export class DialogComponent implements OnInit, OnDestroy
     constructor
         (
             private readonly api: CountriesApi,
-            @Inject(WUI_DIALOG_DATA) public data: Countries
+            @Inject(WUI_DIALOG_DATA) public data: Countries,
+            private readonly dialog: MatDialog,
+            private readonly viewContainerRef: ViewContainerRef
         )
     { }
 
@@ -34,5 +37,15 @@ export class DialogComponent implements OnInit, OnDestroy
     public ngOnDestroy(): void
     {
         this.sub.unsubscribe();
+    }
+
+    public openDialog(countriesInfo: Countries): void
+    {
+      this.dialog.open(DialogComponent, {
+        data: countriesInfo,
+        viewContainerRef: this.viewContainerRef,
+        maxWidth: '800px',
+        maxHeight: '800px'
+      });
     }
 }

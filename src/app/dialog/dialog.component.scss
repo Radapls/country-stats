@@ -41,3 +41,13 @@ p
 @include font-style(14px, --text, 14px);
 margin: 8px;
 }
+
+a
+{
+  @extend p;
+  cursor: pointer;
+  margin-left: 1em;
+  background-color: var(--primary);
+  padding: 0.5em;
+  border-radius:  0.5em;
+}

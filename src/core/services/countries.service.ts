@@ -25,4 +25,9 @@ export class CountriesService
     {
         return this.http.get<Array<Countries>>(api.region(region));
     }
+
+    public getCode(code: string): Observable<Array<Countries>>
+    {
+        return this.http.get<Array<Countries>>(api.code(code));
+    }
 }

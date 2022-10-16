@@ -79,4 +79,34 @@ export const loadRegionError = createAction(
   props<{
     error: ErrorPayload;
   }>()
+  );
+
+  //Get code of the country
+
+export const reloadCode = createAction(
+  `${storeTag} Reload Code`,
+  props<{
+    code: string;
+  }>()
+);
+
+export const loadCode = createAction(
+  `${storeTag} Load Code`,
+  props<{
+    code: string;
+  }>()
+);
+
+export const loadCodeSuccess = createAction(
+  `${storeTag} Load Code Success`,
+  props<{
+    country: Array<Countries>;
+  }>()
+);
+
+export const loaCodeError = createAction(
+  `${storeTag} Load Code Error`,
+  props<{
+    error: ErrorPayload;
+  }>()
 );
