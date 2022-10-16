@@ -1,17 +1,16 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { delay, Observable, of, Subscription } from 'rxjs';
+import { DialogComponent } from 'src/app/home/dialog/dialog.component';
 import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries } from 'src/core/services/models/country.model';
-import { DialogComponent } from './home/dialog/dialog.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.scss' ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy
+export class HomeComponent implements OnInit, OnDestroy
 {
   public search?: string;
   public sub: Subscription = new Subscription();
