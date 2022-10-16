@@ -45,7 +45,7 @@ input, .text
   background-color: var(--primary);
 }
 
- mat-form-field-flex
+::ng-deep mat-form-field-flex
 {
     @include font-bold;
     @include font-style(16px, --text, 20px);
@@ -60,48 +60,48 @@ input, .text
     width: 40%
 }
 
-.mat-select-placeholder
+::ng-deep.mat-select-placeholder
 {
   color: var(--primary) !important;
 }
 
-.mat-select-value
+::ng-deep.mat-select-value
 {
   color: var(--primary) !important;
 }
 
-.mat-form-field-label-wrapper {
+::ng-deep.mat-form-field-label-wrapper {
   color: red !important;
 }
 
-.mat-focused .mat-form-field-label {
+::ng-deep.mat-focused .mat-form-field-label {
     /*change color of label*/
     color: var(--text) !important;
    }
 
-.mat-form-field-ripple {
+::ng-deep.mat-form-field-ripple {
    /*change color of underline when focused*/
    background-color: var(--text) !important;
   }
 
 
 
-.mat-form-field-wrapper {
+::ng-deep.mat-form-field-wrapper {
 
     border-color: transparent !important;
 }
-.mat-form-field-appearance-fill .mat-form-field-flex {
+::ng-deep.mat-form-field-appearance-fill .mat-form-field-flex {
     border-radius: 4px 4px 0 0 !important;
     padding: 0 !important;
 }
-.mat-form-field-infix
+::ng-deep.mat-form-field-infix
 {
     padding: 0 !important;
     color: transparent !important;
     border-color: transparent !important;
 }
 
-.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+::ng-deep.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
     color: var(--primary);
 }
 
