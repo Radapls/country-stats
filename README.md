@@ -6,8 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - [Sass](https://sass-lang.com/)
 - [FxLayout](https://tburleson-layouts-demos.firebaseapp.com/#/docs)
-- [Angular CLI](https://github.com/angular/angular-cli) - Angular framework
-- [Angular Material](https://material.angular.io/) - For components
+- [NgRx](https://ngrx.io/) - Reactive State in SPA.
+- [Angular CLI](https://github.com/angular/angular-cli) - Angular framework.
+- [Angular Material](https://material.angular.io/) - For components.
 
 ## Development server
 
