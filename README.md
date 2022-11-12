@@ -1,6 +1,6 @@
 # Country Stats
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2, implementing [REST Countries API](https://restcountries.com/).
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2, implementing [REST Countries API](https://restcountries.com/). The idea was published in [Frontend Mentor](https://www.frontendmentor.io/challengesrest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca) and refactor code implementing [NGRX](https://ngrx.io/) for reactive state.
 
 ## Built with
 
