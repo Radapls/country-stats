@@ -4,13 +4,13 @@ import { CountriesStore } from './countries/countries.store';
 
 export interface AppState
 {
-    countries: CountriesStore;
+  countries: CountriesStore;
 }
 
 /**
  * App root store containing all reducers.
  */
 export const reducers: ActionReducerMap<object, Action> = {
-    countries: CountriesReducer
+  countries: CountriesReducer
 
 };

@@ -7,10 +7,13 @@ import { StoreModule } from './stores/store.module';
 
 @NgModule({
   imports: [
-    ServicesModule,
-    StoreModule,
     ApiModule,
     EffectsModule,
+    ResolversModule,
+    ServicesModule,
+    StoreModule
+  ],
+  exports: [
     ResolversModule
   ]
 })
