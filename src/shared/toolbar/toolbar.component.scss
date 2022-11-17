@@ -1,5 +1,13 @@
 @import './src/styles/fonts.scss';
 
+.inputs
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 200px;
+}
+
 img
 {
     cursor: pointer;
@@ -9,8 +17,10 @@ img
 .toolbar
 {
     margin-top: 80px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .select
@@ -83,8 +93,6 @@ input, .text
    /*change color of underline when focused*/
    background-color: var(--text) !important;
   }
-
-
 
 ::ng-deep.mat-form-field-wrapper {
 
