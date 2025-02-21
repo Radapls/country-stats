@@ -2,9 +2,8 @@
 
 ::ng-deep.mat-snack-bar-container
 {
-    color: --primary;
-    background: transparent;
-    box-shadow:none;
+    color: var(--primary);
+    background: var(--body);
 }
 
 @mixin base($color, $background, $lblColor)
@@ -13,9 +12,9 @@
     background: $background;
     @include font-light;
     border-radius: 5px;
-    padding: 7px 15px;
-    min-height: 48px;
-    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     label
     {
         @include font-medium;
@@ -26,22 +25,22 @@
         color: $lblColor;
         &:active
         {
-            background-color: --body;
+            background-color: var(--body);
         }
     }
 }
 
 .default
 {
-    @include base(--primary, --body, --text);
+    @include base(var(--primary), var(--body), var(--text));
 }
 
 .success
 {
-    @include base(--primary, --body, --primary);
+    @include base(var(--primary), var(--body), var(--primary));
 }
 
 .warning
 {
-    @include base(--primary, --body, --primary);
+    @include base(var(--primary), var(--body), var(--primary));
 }

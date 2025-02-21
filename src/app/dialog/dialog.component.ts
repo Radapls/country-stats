@@ -48,4 +48,5 @@ export class DialogComponent implements OnInit, OnDestroy
         maxHeight: '800px'
       });
     }
+
 }

@@ -10,5 +10,8 @@ p
 .grid
 {
     display: grid;
+    gap: 16px;
     grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    justify-items: center;
 }

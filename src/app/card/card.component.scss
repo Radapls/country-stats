@@ -1,50 +1,59 @@
-@import '/src/styles/fonts.scss';
-@import '/src/styles.scss';
+@import "/src/styles/fonts.scss";
+@import "/src/styles.scss";
 
-h1
-{
-@include font-bold;
-@include font-style(20px, --text, 20px);
-margin-left: 30px;
+h1 {
+  @include font-bold;
+  @include font-style(20px, --text, 20px);
 }
 
-h2
-{
-@include font-medium;
-@include font-style(14px, --text, 8px);
-margin: 10px 0 10px 5px;
+h2 {
+  @include font-medium;
+  @include font-style(14px, --text, 8px);
 }
 
-h3
-{
-@include font-light;
-@include font-style(14px, --text, 8px);
-margin: 10px 0 10px 5px;
+h3 {
+  @include font-light;
+  @include font-style(14px, --text, 8px);
 }
 
-.card
-{
-display: grid;
-grid-template-columns: repeat(4,1);
-margin: 20px;
-height: 350px;
-width: 280px;
-background-color: var(--body);
-border-radius: 10px;
-box-shadow: 3px 2px 10px 1px var(--primary);
+.card {
+  width: 300px;
+  background-color: var(--primary);
+  border-radius: 1rem;
+  padding: 1rem;
+  color: var(--text);
+  cursor: pointer;
 }
 
-img
-{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 180px;
-    width: 100%;
-    object-fit: cover;
+.hero {
+  background-color: #fef4e2;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.sub-container
-{
-    margin-left: 30px;
-    margin-right: 30px;
+img {
+  width: auto;
+  height: 100px;
+  object-fit: cover;
+  filter: drop-shadow(2px 2px 5px var(--primary));
+  border-radius: 4px;
+}
+
+.sub-container {
+  padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
 }

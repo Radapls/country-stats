@@ -1,20 +1,14 @@
 <div class="toolbar">
-    <div fxLayout="row" fxFlexAlign="center" class="inputs">
-        <input placeholder="Type a country" type="text" [(ngModel)]="searchContents">
-    </div>
+  <input
+    placeholder="Type a country"
+    type="text"
+    [(ngModel)]="searchContents"
+  />
 
-    <div fxLayout="row" fxFlexAlign="center" class="inputs">
-      <mat-form-field appearance="fill" name="regions" class="select">
-        <mat-label>Select region</mat-label>
-        <mat-select>
-            <mat-option>None</mat-option>
-            <mat-option
-              *ngFor="let region of itemRegions"
-              [value]="itemRegions"
-              (click)="getRegion(region)">
-              {{ region }}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    </div>
+  <select #selectList (change)="getRegion($event)">
+    <option value="">None</option>
+    <option *ngFor="let region of itemRegions" [value]="region">
+      {{ region }}
+    </option>
+  </select>
 </div>

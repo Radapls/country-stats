@@ -1,14 +1,14 @@
 
 :root {
-    --primary:  hsl(0, 0%, 52%); // ligth Mode Input
-    --body: hsl(0, 0%, 98%); // Light Mode Background
+    --primary:  hsl(0deg 0% 100%); // ligth Mode Input
+    --body: hsl(0deg 0% 90.98%); // Light Mode Background
     --text: hsl(200, 15%, 8%); // Light Mode text
     }
 
 
 :root .dark-theme
     {
-    --primary:  hsl(209, 23%, 22%); // Dark Mode Elements
+    --primary:  hsl(208, 18%, 37%); // Dark Mode Elements
     --body: hsl(207, 26%, 17%); // Dark Mode Backgroud
     --text:  hsl(0, 0%, 100%); // Dark Mode text & Light mode elements
     }
@@ -45,4 +45,8 @@ html, body
 }
 
 
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+    margin: 0;
 }
