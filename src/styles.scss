@@ -1,52 +1,70 @@
-
 :root {
-    --primary:  hsl(0deg 0% 100%); // ligth Mode Input
-    --body: hsl(0deg 0% 90.98%); // Light Mode Background
-    --text: hsl(200, 15%, 8%); // Light Mode text
-    }
+    --primary: hsl(0, 0%, 100%);
+    --body: hsl(0, 0%, 91%);
+    --text: hsl(200, 15%, 8%);
+    --text-secondary: hsl(200, 15%, 30%);
+    --shadow: rgba(0, 0, 0, 0.12);
+    --accent: hsl(207, 60%, 45%);
+    --border: hsl(0, 0%, 78%);
+    --focus: hsl(207, 80%, 52%);
+}
 
+body.dark-theme {
+    --primary: hsl(209, 23%, 22%);
+    --body: hsl(207, 26%, 17%);
+    --text: hsl(0, 0%, 100%);
+    --text-secondary: hsl(0, 0%, 75%);
+    --shadow: rgba(0, 0, 0, 0.3);
+    --accent: hsl(207, 70%, 65%);
+    --border: hsl(209, 20%, 30%);
+    --focus: hsl(207, 80%, 65%);
+}
 
-:root .dark-theme
-    {
-    --primary:  hsl(208, 18%, 37%); // Dark Mode Elements
-    --body: hsl(207, 26%, 17%); // Dark Mode Backgroud
-    --text:  hsl(0, 0%, 100%); // Dark Mode text & Light mode elements
-    }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-
-html, body
-{
+html, body {
     margin: 0;
     padding: 0;
-    background-color: var(--body);
-    box-sizing: inherit;
-
-        body:before
-    {
-        position: absolute;
-        height: fit-content;
-        background-color: var(--body);
-    }
-
-    @mixin mobile
-{
-    @media screen and (max-width: #{$Mobile})
-    {
-        @content;
-    }
-}
-
-@mixin desktop
-{
-    @media screen and (max-width: #{$Desktop})
-    {
-        @content;
-    }
-}
-
-
+    background-color: var(--body) !important;
+    color: var(--text);
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
     margin: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Dialog theme overrides (overlay renders outside app-root)
+.mat-mdc-dialog-container {
+    --mdc-dialog-container-color: var(--body);
+    --mdc-dialog-subhead-color: var(--text);
+
+    .mat-mdc-dialog-surface {
+        background-color: var(--body) !important;
+        color: var(--text) !important;
+    }
+}
+
+.mat-mdc-dialog-actions button {
+    color: var(--text) !important;
 }

@@ -1,46 +1,57 @@
-@import './src/styles/fonts.scss';
+@use 'src/styles/fonts' as *;
 
-::ng-deep.mat-snack-bar-container
-{
-    color: var(--primary);
-    background: var(--body);
+::ng-deep .mat-mdc-snack-bar-container {
+    --mdc-snackbar-container-color: transparent;
+    --mdc-snackbar-supporting-text-color: var(--text);
+    --mat-snack-bar-button-color: var(--accent);
+    box-shadow: none !important;
+    border: none !important;
+
+    .mdc-snackbar__surface {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+    }
 }
 
-@mixin base($color, $background, $lblColor)
-{
+@mixin base($color, $background, $lblColor) {
     color: $color;
     background: $background;
     @include font-light;
-    border-radius: 5px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    label
-    {
+    padding: 12px 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    label {
         @include font-medium;
         cursor: pointer;
         font-size: 14px;
-        padding: 16px;
+        padding: 8px 16px;
         border-radius: 10px;
         color: $lblColor;
-        &:active
-        {
+
+        &:hover {
+            background-color: var(--border);
+        }
+
+        &:active {
             background-color: var(--body);
         }
     }
 }
 
-.default
-{
-    @include base(var(--primary), var(--body), var(--text));
+.default {
+    @include base(var(--text), var(--primary), var(--accent));
 }
 
-.success
-{
-    @include base(var(--primary), var(--body), var(--primary));
+.success {
+    @include base(hsl(145, 60%, 20%), hsl(145, 60%, 90%), hsl(145, 60%, 25%));
 }
 
-.warning
-{
-    @include base(var(--primary), var(--body), var(--primary));
+.warning {
+    @include base(hsl(30, 80%, 20%), hsl(30, 80%, 90%), hsl(30, 80%, 25%));
 }

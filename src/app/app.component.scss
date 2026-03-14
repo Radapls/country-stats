@@ -1,5 +1,17 @@
-@import './src/styles/fonts.scss';
-@import './src/styles/breakpoints.scss';
+@use 'src/styles/fonts' as *;
+@use 'src/styles/breakpoints' as *;
+
+:host {
+    display: block;
+    min-height: 100vh;
+    background-color: var(--body);
+}
+
+.container {
+    min-height: 100vh;
+    padding-bottom: 32px;
+    background-color: var(--body);
+}
 
 p
 {
@@ -11,7 +23,8 @@ p
 {
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     align-items: center;
     justify-items: center;
+    padding: 0 16px;
 }

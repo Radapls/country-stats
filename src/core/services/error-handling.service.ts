@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Store, Action } from '@ngrx/store';
-import { ActionCreator } from '@ngrx/store/src/models';
+import { Store, Action, ActionCreator } from '@ngrx/store';
 import { Observable, OperatorFunction } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { SnackBarService } from 'src/shared/snack-bar/snack-bar.service';

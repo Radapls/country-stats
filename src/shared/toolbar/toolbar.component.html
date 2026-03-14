@@ -1,11 +1,14 @@
 <div class="toolbar">
+  <label for="search-input" class="sr-only">Search for a country</label>
   <input
+    id="search-input"
     placeholder="Type a country"
     type="text"
     [(ngModel)]="searchContents"
     />
 
-  <select #selectList (change)="getRegion($event)">
+  <label for="region-select" class="sr-only">Filter by region</label>
+  <select id="region-select" #selectList (change)="getRegion($event)">
     <option value="">None</option>
     @for (region of itemRegions; track region) {
       <option [value]="region">

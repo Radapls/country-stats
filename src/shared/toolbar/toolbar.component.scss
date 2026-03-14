@@ -1,16 +1,14 @@
-@import './src/styles/fonts.scss';
+@use 'src/styles/fonts' as *;
 
 .toolbar
 {
     margin-top: 80px;
-    flex-flow: wrap;
-    box-sizing: border-box;
     display: flex;
-    place-content: stretch center;
-    align-items: stretch;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    padding: 32px
+    gap: 16px;
+    padding: 24px 32px;
   }
 
 select
@@ -18,21 +16,21 @@ select
   @include font-bold;
   @include font-style(16px, --text, 22px);
   border-radius: 5px;
-  background-color: var(--body);
-  border: 2px solid var(--primary);
-  height: 35px;
+  background-color: var(--primary);
+  border: 2px solid var(--border);
+  height: 45px;
+  padding: 0 12px;
   color: var(--text)
 }
 
 input
 {
   @include font-bold;
-  @include font-style(16px, --text, 36px);
-
+  @include font-style(16px, --text, 22px);
   border-radius: 5px;
-  background-color: var(--body);
-  border: 2px solid var(--primary);
-  height: 20px;
-  width: auto;
-  padding: 5px;
+  background-color: var(--primary);
+  border: 2px solid var(--border);
+  height: 45px;
+  width: 280px;
+  padding: 0 12px;
 }

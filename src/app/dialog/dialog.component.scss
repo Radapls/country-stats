@@ -1,113 +1,112 @@
-@import "./src/styles/fonts.scss";
+@use 'src/styles/fonts' as *;
 
-.mat-dialog-content {
-  align-content: center;
-  padding: 40px;
-  min-width: 450px;
-  background-color: var(--body) !important;
-}
+::ng-deep .mat-mdc-dialog-container {
+  --mdc-dialog-container-color: var(--body) !important;
+  --mdc-dialog-subhead-color: var(--text);
 
-::ng-deep.mat-dialog-container {
-  background-color: var(--body) !important;
-}
-
-.mat-icon {
-  color: var(--primary);
+  .mat-mdc-dialog-surface {
+    background-color: var(--body) !important;
+    color: var(--text) !important;
+  }
 }
 
 h1 {
   @include font-ExtraBold;
-  @include font-style(36px, --text, 36px);
+  @include font-style(24px, --text, 32px);
+  padding: 16px 24px 0;
 }
 
-h2 {
-  @include font-bold;
-  @include font-style(14px, --text, 12px);
-}
-
-h3 {
-  @include font-ExtraBold;
-  @include font-style(14px, --text, 12px);
-}
-
-p {
-  @include font-ExtraBold;
-  @include font-style(14px, --text, 14px);
-  margin: 0;
-  max-width: 350px;
-}
-
-a {
-  @extend p;
-  cursor: pointer;
-  margin-left: 1em;
-  background-color: var(--primary);
-  padding: 0.5em;
-  border-radius: 0.5em;
-}
-
-mat-button,
-mat-dialog-close {
-  color: var(--text);
-}
-
-.row {
+.content {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  padding: 8px 0;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: auto;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: drop-shadow(0 2px 8px var(--shadow));
+  }
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
-.column {
+.detail-item {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
+
+  mat-icon {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .label {
+    @include font-bold;
+    @include font-style(12px, --text-secondary, 16px);
+    flex-shrink: 0;
+  }
+
+  p {
+    @include font-medium;
+    @include font-style(14px, --text, 18px);
+    margin: 0;
+    word-break: break-word;
+  }
 }
 
 .border-countries {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border: double var(--text);
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 8px;
+  border: 1px solid var(--border);
   border-radius: 8px;
+  padding: 12px 16px;
 
-  ul {
-    padding: 0;
-    max-width: 450px;
+  > .label {
+    @include font-bold;
+    @include font-style(13px, --text-secondary, 16px);
+  }
+
+  .border-list {
+    display: flex;
     flex-wrap: wrap;
-    gap: 24px
+    gap: 8px;
   }
-
-  p {
-    text-align: center;
-    width: auto;
-  }
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
 }
 
 .country {
+  @include font-medium;
+  @include font-style(13px, --text, 16px);
   background-color: var(--primary);
-  padding:8px;
-  border-radius: 8px;
-  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  .border-flag {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+    filter: none;
+  }
 }
 
-img {
-  width: auto;
-  height: 150px;
-  object-fit: cover;
-  filter: drop-shadow(2px 2px 5px var(--primary));
-  border-radius: 4px;
+button[mat-button] {
+  color: var(--text);
 }
-

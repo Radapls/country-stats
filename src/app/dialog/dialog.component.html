@@ -1,67 +1,76 @@
-<h1 mat-dialog-title>{{ data.name.common + data.flag }} </h1>
+<h1 mat-dialog-title>{{ data.name.common }} {{ data.flag || '' }}</h1>
 <mat-dialog-content>
-  <div class="container column">
-
-    <div class="row">
+  <div class="content">
+    <div class="hero-section">
       <img
-        [src]="data.coatOfArms.png || data.flags.png"
+        [src]="data.coatOfArms?.png || data.flags.png"
         alt="Coat of Arms of the country"
-        width="auto"
         height="150"
         loading="eager"
-        draggable="false"
-        fxLayoutAlign="center">
+        draggable="false">
+    </div>
 
-      <div class="column">
-        <div class="row">
-          <mat-icon aria-hidden="false" fontIcon="verified" color="primary">
-          </mat-icon>
+    <div class="details">
+      <div class="details-grid">
+        <div class="detail-item">
+          <mat-icon fontIcon="verified" color="primary"></mat-icon>
+          <span class="label">Native Name</span>
           <p>{{ data.name.nativeName | nativeName }}</p>
         </div>
-        <div class="row">
-          <mat-icon aria-hidden="false" fontIcon="groups"></mat-icon>
+        <div class="detail-item">
+          <mat-icon fontIcon="groups"></mat-icon>
+          <span class="label">Population</span>
           <p>{{ data.population | number:'1.0-4' }}</p>
         </div>
-        <div class="row">
-          <mat-icon aria-hidden="false" fontIcon="public"></mat-icon>
+        <div class="detail-item">
+          <mat-icon fontIcon="public"></mat-icon>
+          <span class="label">Region</span>
           <p>{{ data.region }}</p>
         </div>
-        <div class="row">
-          <mat-icon aria-hidden="false" fontIcon="location_on"></mat-icon>
+        <div class="detail-item">
+          <mat-icon fontIcon="location_on"></mat-icon>
+          <span class="label">Sub Region</span>
           <p>{{ data.subregion }}</p>
         </div>
-        <div class="row">
-          <mat-icon aria-hidden="false" fontIcon="location_city"></mat-icon>
+        <div class="detail-item">
+          <mat-icon fontIcon="location_city"></mat-icon>
+          <span class="label">Capital</span>
           <p>{{ data.capital }}</p>
         </div>
-        <div class="row">
-          <mat-icon aria-hidden="false" fontIcon="domain"></mat-icon>
-          <p>{{ data.tld}}</p>
+        <div class="detail-item">
+          <mat-icon fontIcon="domain"></mat-icon>
+          <span class="label">Top Level Domain</span>
+          <p>{{ data.tld }}</p>
         </div>
-        <div class="row">
-          <mat-icon aria-hidden="false" fontIcon="attach_money"></mat-icon>
+        <div class="detail-item">
+          <mat-icon fontIcon="attach_money"></mat-icon>
+          <span class="label">Currencies</span>
           <p>{{ data.currencies | detail }}</p>
         </div>
-        <div class="row">
-          <mat-icon aria-hidden="false" fontIcon="language"></mat-icon>
+        <div class="detail-item">
+          <mat-icon fontIcon="language"></mat-icon>
+          <span class="label">Languages</span>
           <p>{{ data.languages | lang }}</p>
         </div>
-
       </div>
     </div>
 
-    @if (data.borders) {
+    @if (data.borders && data.borders.length > 0) {
       <div class="border-countries">
-        <p>Border Countries</p>
-        <ul class="row">
+        <span class="label">Border Countries</span>
+        <div class="border-list">
           @for (border of data.borders; track border) {
-            <p class="country">{{border}}</p>
+            <span class="country">
+              @if (getBorderFlag(border)) {
+                <img [src]="getBorderFlag(border)" [alt]="border + ' flag'" class="border-flag">
+              }
+              {{ border }}
+            </span>
           }
-        </ul>
+        </div>
       </div>
     }
   </div>
-
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button [mat-dialog-close]="true">Close</button>

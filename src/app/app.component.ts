@@ -32,6 +32,7 @@ export class AppComponent implements OnInit, OnDestroy
   { }
   public ngOnInit(): void
   {
+    this.api.loadCountries();
     this.sub.add(this.countries$.subscribe((value) =>
       this.countries = value))
     this.sub.add(this.searchName$.subscribe((value) =>
@@ -66,5 +67,11 @@ export class AppComponent implements OnInit, OnDestroy
   {
     this.search = region;
     this.api.loadRegions(region);
+  }
+
+  public onReset()
+  {
+    this.search = '';
+    this.api.loadCountries();
   }
 }

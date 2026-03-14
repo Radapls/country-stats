@@ -1,4 +1,7 @@
-export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<CoatOfArms> & Partial<Languages> & Partial<Currency>;
+export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<CoatOfArms> & Partial<Languages> & Partial<Currency> & {
+  coatOfArms?: CoatOfArms;
+  flag?: string;
+};
 
 
 export interface CountryBase

@@ -50,4 +50,8 @@ export class DialogComponent implements OnInit, OnDestroy
       });
     }
 
+    public getBorderFlag(code: string): string {
+        return this.countries.find(c => c.cca3 === code)?.flags?.png || '';
+    }
+
 }

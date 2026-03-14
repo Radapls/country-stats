@@ -1,17 +1,17 @@
-<header fxLayout="row" fxLayoutAlign="space-between center">
-  <img src="/assets/images/earth-icon.png" alt="Earth icon" width="45px">
+<header class="header-row">
+  <img src="/assets/images/earth-icon.png" alt="Show all countries" width="45px"
+    class="logo-btn" (click)="onLogoClick()" role="button" tabindex="0">
   <h1>Where in the world ?</h1>
 
-
-  <button (click)="changeTheme()" class="btn">
+  <button (click)="changeTheme()" class="btn"
+    [attr.aria-label]="selectMode ? 'Switch to light mode' : 'Switch to dark mode'">
     @if (!selectMode) {
-      <mat-icon aria-hidden="false" fontIcon="dark_mode" [ngStyle]="{'color':'var(--text)'}">
+      <mat-icon aria-hidden="true" fontIcon="dark_mode" [style.color]="'var(--text)'">
       </mat-icon>
     }
     @if (selectMode) {
-      <mat-icon aria-hidden="true" fontIcon="light_mode" [ngStyle]="{'color':'var(--text)'}">
+      <mat-icon aria-hidden="true" fontIcon="light_mode" [style.color]="'var(--text)'">
       </mat-icon>
     }
   </button>
-
 </header>
