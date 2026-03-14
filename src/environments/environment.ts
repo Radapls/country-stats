@@ -14,7 +14,7 @@ export const storeTools: Array<ModuleWithProviders<any>> = [
     StoreDevtoolsModule.instrument({
         maxAge: 25,
         name: 'Countries Stats'
-    })
+    , connectInZone: true})
 ];
 
 /*
