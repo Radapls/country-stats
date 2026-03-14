@@ -1,7 +1,4 @@
-export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<CoatOfArms> & Partial<Languages> & Partial<Currency> & {
-  coatOfArms?: CoatOfArms;
-  flag?: string;
-};
+export type Countries = CountryBase & Partial<Name> & Partial<Flags> & Partial<CoatOfArms> & Partial<Languages> & Partial<Currency>;
 
 
 export interface CountryBase
@@ -37,7 +34,7 @@ export interface CountryBase
   timeZone: Array<string>;
   continent: Array<string>;
   flags: Flags;
-  coatOfArms: CoatOfArms;
+  coatOfArms?: CoatOfArms;
   startOfWeek: string;
   capitalInfo: Array<string>;
   postalCode: Array<string>;
