@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
+
 import { CountriesApi } from '../api/countries.api';
 
 @Injectable()
-export class CountriesResolver implements Resolve<void>
+export class CountriesResolver 
 {
     constructor(private api: CountriesApi)
     { }
