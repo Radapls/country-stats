@@ -4,10 +4,14 @@
 
 
   <button (click)="changeTheme()" class="btn">
-    <mat-icon *ngIf="!selectMode" aria-hidden="false" fontIcon="dark_mode" [ngStyle]="{'color':'var(--text)'}">
-    </mat-icon>
-    <mat-icon *ngIf="selectMode" aria-hidden="true" fontIcon="light_mode" [ngStyle]="{'color':'var(--text)'}">
-    </mat-icon>
+    @if (!selectMode) {
+      <mat-icon aria-hidden="false" fontIcon="dark_mode" [ngStyle]="{'color':'var(--text)'}">
+      </mat-icon>
+    }
+    @if (selectMode) {
+      <mat-icon aria-hidden="true" fontIcon="light_mode" [ngStyle]="{'color':'var(--text)'}">
+      </mat-icon>
+    }
   </button>
 
 </header>

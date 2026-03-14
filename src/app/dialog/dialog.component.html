@@ -50,12 +50,16 @@
       </div>
     </div>
 
-    <div class="border-countries" *ngIf="data.borders">
-      <p>Border Countries</p>
-      <ul class="row">
-          <p class="country" *ngFor="let border of data.borders">{{border}}</p>
-      </ul>
-    </div>
+    @if (data.borders) {
+      <div class="border-countries">
+        <p>Border Countries</p>
+        <ul class="row">
+          @for (border of data.borders; track border) {
+            <p class="country">{{border}}</p>
+          }
+        </ul>
+      </div>
+    }
   </div>
 
 </mat-dialog-content>

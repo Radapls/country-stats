@@ -3,12 +3,14 @@
     placeholder="Type a country"
     type="text"
     [(ngModel)]="searchContents"
-  />
+    />
 
   <select #selectList (change)="getRegion($event)">
     <option value="">None</option>
-    <option *ngFor="let region of itemRegions" [value]="region">
-      {{ region }}
-    </option>
+    @for (region of itemRegions; track region) {
+      <option [value]="region">
+        {{ region }}
+      </option>
+    }
   </select>
 </div>

@@ -1,26 +1,28 @@
-<app-loading *ngIf="(loading$ | async) === true"></app-loading>
+@if ((loading$ | async) === true) {
+  <app-loading></app-loading>
+}
 
-<div class="container" *ngIf="(loading$ | async) === false">
-  <app-header></app-header>
-
-  <div>
-    <app-toolbar
-      (search)="onNameFilter($event)"
-      (filter)="onRegionFilter($event)">
-    </app-toolbar>
+@if ((loading$ | async) === false) {
+  <div class="container">
+    <app-header></app-header>
+    <div>
+      <app-toolbar
+        (search)="onNameFilter($event)"
+        (filter)="onRegionFilter($event)">
+      </app-toolbar>
+    </div>
+    <div class="grid" fxLayout="row wrap" fxLayoutAlign="center space-evenly" fxlayout="column wrap">
+      @for (country of countries; track country) {
+        <app-card
+          draggable="false"
+          [flag]="country.flags.png"
+          [name]="country.name.common"
+          [population]="country.population"
+          [region]="country.region"
+          [capital]="country.capital"
+          (click)="openDialog(country)">
+        </app-card>
+      }
+    </div>
   </div>
-
-  <div class="grid" fxLayout="row wrap" fxLayoutAlign="center space-evenly" fxlayout="column wrap">
-    <app-card
-      draggable="false"
-      *ngFor="let country of countries"
-      [flag]="country.flags.png"
-      [name]="country.name.common"
-      [population]="country.population"
-      [region]="country.region"
-      [capital]="country.capital"
-      (click)="openDialog(country)">
-    </app-card>
-  </div>
-
-</div>
+}
