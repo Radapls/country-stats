@@ -1,14 +1,14 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { ActionCreator, TypedAction } from '@ngrx/store/src/models';
+import { Store, Action } from '@ngrx/store';
+import { ActionCreator } from '@ngrx/store/src/models';
 import { Observable, OperatorFunction } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { SnackBarService } from 'src/shared/snack-bar/snack-bar.service';
 
 declare type ActionType = ActionCreator<
     string,
-    (props: ActionErrorPayload) => ActionErrorPayload & TypedAction<string>
+    (props: ActionErrorPayload) => ActionErrorPayload & Action<string>
 >;
 
 export interface ErrorPayload
