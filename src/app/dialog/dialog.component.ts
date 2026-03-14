@@ -8,9 +8,10 @@ import { WUI_DIALOG_DATA } from 'src/core/services/models/dialog.model';
 @Component({
     selector: 'app-dialog',
     templateUrl: './dialog.component.html',
-    styleUrls: [ './dialog.component.scss' ],
+    styleUrls: ['./dialog.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.Emulated,
+    standalone: false
 })
 export class DialogComponent implements OnInit, OnDestroy
 {

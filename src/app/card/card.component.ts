@@ -6,8 +6,9 @@ import { Countries } from 'src/core/services/models/country.model';
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
-    styleUrls: [ './card.component.scss' ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class CardComponent
 {

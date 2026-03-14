@@ -13,7 +13,7 @@ export interface SnackBarData
 @Component({
     selector: 'app-snack-bar',
     templateUrl: './snack-bar.component.html',
-    styleUrls: [ './snack-bar.component.scss' ],
+    styleUrls: ['./snack-bar.component.scss'],
     animations: [
         trigger('toggleSnack', [
             state('closed', style({
@@ -27,7 +27,8 @@ export interface SnackBarData
             transition('closed <=> opened', animate(`${ANIM_TIMEOUT}s ease-out`))
         ])
     ],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class SnackBarComponent implements OnInit
 {

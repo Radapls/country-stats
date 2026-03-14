@@ -14,11 +14,12 @@ import { CountriesApi } from 'src/core/api/countries.api';
 import { Countries, Regions } from 'src/core/services/models/country.model';
 
 @Component({
-  selector: 'app-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.Emulated,
+    selector: 'app-toolbar',
+    templateUrl: './toolbar.component.html',
+    styleUrls: ['./toolbar.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.Emulated,
+    standalone: false
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
   private searchEvent: EventEmitter<string> = new EventEmitter();
