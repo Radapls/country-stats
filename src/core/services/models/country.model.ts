@@ -25,7 +25,7 @@ export interface CountryBase
   borders: Array<string>;
   area: number;
   demonyms: Array<string>;
-  flag: string;
+  flag?: string;
   maps: Array<string>;
   gini: Array<string>;
   population: number;
